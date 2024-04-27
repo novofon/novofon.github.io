@@ -1,0 +1,1441 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Changelog - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2023-07-31-ext_id" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DATA API" class="md-header__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DATA API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Changelog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Changelog
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Changelog
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2023-07-31-ext_id" class="md-nav__link">
+    2023-07-31 Добавление ext_id
+  </a>
+  
+    <nav class="md-nav" aria-label="2023-07-31 Добавление ext_id">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2023-05-31-ext_id" class="md-nav__link">
+    2023-05-31 Добавление ext_id
+  </a>
+  
+    <nav class="md-nav" aria-label="2023-05-31 Добавление ext_id">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2021-06-28" class="md-nav__link">
+    2021-06-28 Загрузка расходов по рекламным кампаниям
+  </a>
+  
+    <nav class="md-nav" aria-label="2021-06-28 Загрузка расходов по рекламным кампаниям">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2021-03-22" class="md-nav__link">
+    2021-03-22 Новые отчеты Коллтрекинга
+  </a>
+  
+    <nav class="md-nav" aria-label="2021-03-22 Новые отчеты Коллтрекинга">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2021-03-04-name" class="md-nav__link">
+    2021-03-04 Добавлено поле name в методы по созданию, редактированию, получению списка сайтов
+  </a>
+  
+    <nav class="md-nav" aria-label="2021-03-04 Добавлено поле name в методы по созданию, редактированию, получению списка сайтов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2021-02-08" class="md-nav__link">
+    2021-02-08 Черный список
+  </a>
+  
+    <nav class="md-nav" aria-label="2021-02-08 Черный список">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2019-11-14" class="md-nav__link">
+    2019-11-14
+  </a>
+  
+    <nav class="md-nav" aria-label="2019-11-14">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Добавили в "Загрузку коммуникаций"
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#209-2019-10-03" class="md-nav__link">
+    [2.0.9] - 2019-10-03
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.9] - 2019-10-03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    Добавили
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#208-2019-01-10" class="md-nav__link">
+    [2.0.8] - 2019-01-10
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.8] - 2019-01-10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    Добавили
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#207-2018-11-29" class="md-nav__link">
+    [2.0.7] - 2018-11-29
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.7] - 2018-11-29">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    Добавили
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#206-2018-08-10" class="md-nav__link">
+    [2.0.6] - 2018-08-10
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.6] - 2018-08-10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    Добавили
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#205-2018-07-12" class="md-nav__link">
+    [2.0.5] - 2018-07-12
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.5] - 2018-07-12">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    Добавили
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#204-2018-02-15" class="md-nav__link">
+    [2.0.4] - 2018-02-15
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.4] - 2018-02-15">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    Добавили
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#203-2018-02-07" class="md-nav__link">
+    [2.0.3] - 2018-02-07
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.3] - 2018-02-07">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    Добавили
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#202-2018-01-29" class="md-nav__link">
+    [2.0.2] - 2018-01-29
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.2] - 2018-01-29">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    Добавили
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Общая информация
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/" class="md-nav__link">
+        Права и компоненты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../account/get_account/" class="md-nav__link">
+        Аккаунт
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vn/" class="md-nav__link">
+        Виртуальные номера
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sip/" class="md-nav__link">
+        SIP-линии
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scenario/get_scenarios/" class="md-nav__link">
+        Сценарии
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_media/get_media_files/" class="md-nav__link">
+        Медиафайлы
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../campaigns/" class="md-nav__link">
+        Рекламные кампании
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sales_funnel_and_deals/" class="md-nav__link">
+        Воронки продаж и Сделки
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sites/" class="md-nav__link">
+        Сайты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/" class="md-nav__link">
+        Отчёты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        Теги
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../employees/" class="md-nav__link">
+        Сотрудники
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contacts/" class="md-nav__link">
+        Адресная книга
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blacklist/" class="md-nav__link">
+        Черный список
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedules/" class="md-nav__link">
+        Графики активности
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../report/get_campaign_daily_stat/" class="md-nav__link">
+        Получения статистики РК по дням
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../partners/" class="md-nav__link">
+        Клиенты агентов
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../communications/" class="md-nav__link">
+        Загрузка коммуникаций
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../persons/" class="md-nav__link">
+        Персона/Визитор
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2023-07-31-ext_id" class="md-nav__link">
+    2023-07-31 Добавление ext_id
+  </a>
+  
+    <nav class="md-nav" aria-label="2023-07-31 Добавление ext_id">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2023-05-31-ext_id" class="md-nav__link">
+    2023-05-31 Добавление ext_id
+  </a>
+  
+    <nav class="md-nav" aria-label="2023-05-31 Добавление ext_id">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2021-06-28" class="md-nav__link">
+    2021-06-28 Загрузка расходов по рекламным кампаниям
+  </a>
+  
+    <nav class="md-nav" aria-label="2021-06-28 Загрузка расходов по рекламным кампаниям">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2021-03-22" class="md-nav__link">
+    2021-03-22 Новые отчеты Коллтрекинга
+  </a>
+  
+    <nav class="md-nav" aria-label="2021-03-22 Новые отчеты Коллтрекинга">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2021-03-04-name" class="md-nav__link">
+    2021-03-04 Добавлено поле name в методы по созданию, редактированию, получению списка сайтов
+  </a>
+  
+    <nav class="md-nav" aria-label="2021-03-04 Добавлено поле name в методы по созданию, редактированию, получению списка сайтов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2021-02-08" class="md-nav__link">
+    2021-02-08 Черный список
+  </a>
+  
+    <nav class="md-nav" aria-label="2021-02-08 Черный список">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2019-11-14" class="md-nav__link">
+    2019-11-14
+  </a>
+  
+    <nav class="md-nav" aria-label="2019-11-14">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Добавили в "Загрузку коммуникаций"
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#209-2019-10-03" class="md-nav__link">
+    [2.0.9] - 2019-10-03
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.9] - 2019-10-03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    Добавили
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#208-2019-01-10" class="md-nav__link">
+    [2.0.8] - 2019-01-10
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.8] - 2019-01-10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    Добавили
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#207-2018-11-29" class="md-nav__link">
+    [2.0.7] - 2018-11-29
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.7] - 2018-11-29">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    Добавили
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#206-2018-08-10" class="md-nav__link">
+    [2.0.6] - 2018-08-10
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.6] - 2018-08-10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    Добавили
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#205-2018-07-12" class="md-nav__link">
+    [2.0.5] - 2018-07-12
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.5] - 2018-07-12">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    Добавили
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#204-2018-02-15" class="md-nav__link">
+    [2.0.4] - 2018-02-15
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.4] - 2018-02-15">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    Добавили
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#203-2018-02-07" class="md-nav__link">
+    [2.0.3] - 2018-02-07
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.3] - 2018-02-07">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    Добавили
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#202-2018-01-29" class="md-nav__link">
+    [2.0.2] - 2018-01-29
+  </a>
+  
+    <nav class="md-nav" aria-label="[2.0.2] - 2018-01-29">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    Добавили
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Changelog</h1>
+                
+                <h2 id="2023-07-31-ext_id">2023-07-31 Добавление ext_id</h2>
+<ul>
+<li>Добавлена возможность загружать Обращения типа Email</li>
+</ul>
+<h3 id="_1"></h3>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./communications/upload_emails.md">"upload.emails"</a></td>
+<td>Загрузка email</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2023-05-31-ext_id">2023-05-31 Добавление ext_id</h2>
+<ul>
+<li>Добавлена возможность работы с коммуникациями по ext_id</li>
+</ul>
+<h3 id="_2"></h3>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../tag/set_tag_communications">"set.tag_communications"</a></td>
+<td>Проставление тега на обращение</td>
+</tr>
+<tr>
+<td><a href="../tag/unset_tag_communications">"unset.tag_communications"</a></td>
+<td>Снятие тега с обращения</td>
+</tr>
+<tr>
+<td><a href="../communication/upload_chats">"upload.chats"</a></td>
+<td>Загрузка чатов</td>
+</tr>
+<tr>
+<td><a href="../communication/offline_messages_chats">"upload.offline_messages"</a></td>
+<td>Загрузка офлайн заявок</td>
+</tr>
+<tr>
+<td><a href="../report/get_calls_report">"get.calls_report"</a></td>
+<td>Получение отчёта по сессиям звонков</td>
+</tr>
+<tr>
+<td><a href="../report/get_chats_report">"get.chats_report"</a></td>
+<td>Получение информации о чатах</td>
+</tr>
+<tr>
+<td><a href="../report/get_offline_messages_report">"get.offline_messages_report"</a></td>
+<td>Получение информации по оффлайн заявкам</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2021-06-28">2021-06-28 Загрузка расходов по рекламным кампаниям</h2>
+<ul>
+<li>Добавлен новый метод для загрузки расходов по рекламным кампаниям</li>
+</ul>
+<h3 id="_3"></h3>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../campaign/upload_campaign_costs">"upload.campaign_costs"</a></td>
+<td>Загрузка расходов по рекламным кампаниям</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2021-03-22">2021-03-22 Новые отчеты Коллтрекинга</h2>
+<ul>
+<li>Добавлены новые методы для получения отчета "Номера коллтрекинга" в разрезе по рекламным кампаниям и сайтам.</li>
+</ul>
+<h3 id="_4"></h3>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../report/get_ct_ac_summary_report">"get.ct_ac_summary_report"</a></td>
+<td>Номера колтрекинга по рекламным кампаниям</td>
+</tr>
+<tr>
+<td><a href="../report/get_ct_summary_report">"get.ct_summary_report"</a></td>
+<td>Номера колтрекинга по сайтам</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2021-03-04-name">2021-03-04 Добавлено поле name в методы по созданию, редактированию, получению списка сайтов</h2>
+<h3 id="_5"></h3>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../site/create_sites">"create.sites"</a></td>
+<td>Создание сайта</td>
+</tr>
+<tr>
+<td><a href="../site/get_sites">"get.sites"</a></td>
+<td>Получения списка сайтов</td>
+</tr>
+<tr>
+<td><a href="../site/update_sites">"update.sites"</a></td>
+<td>Редактирование сайта</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2021-02-08">2021-02-08 Черный список</h2>
+<ul>
+<li>Внесены изменения в структуру документации DataAPI</li>
+<li>Добавили работу с Черным списком</li>
+</ul>
+<h3 id="_6"></h3>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../blacklist/get_blacklist_phone_numbers/">"get.blacklist_phone_numbers"</a></td>
+<td>Получение телефонных номеров занесенных в черный список</td>
+</tr>
+<tr>
+<td><a href="../blacklist/delete_phone_number_from_blacklist/">"delete.phone_number_from_blacklist"</a></td>
+<td>Удаление номера телефона из черного списка</td>
+</tr>
+<tr>
+<td><a href="../blacklist/create_phone_number_to_blacklist/">"create.phone_number_to_blacklist"</a></td>
+<td>Добавление номера телефона в черный список</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2019-11-14">2019-11-14</h2>
+<h3 id="_7">Добавили в "Загрузку коммуникаций"</h3>
+<ul>
+<li>Загрузка/удаление офлайн-заявок <code>upload.offline_messages</code></li>
+<li>Загрузка/удаление чатов <code>upload.chats</code></li>
+</ul>
+<h2 id="209-2019-10-03">[2.0.9] - 2019-10-03</h2>
+<h3 id="_8">Добавили</h3>
+<ul>
+<li>Получение аккаунта <code>get.account</code></li>
+</ul>
+<h2 id="208-2019-01-10">[2.0.8] - 2019-01-10</h2>
+<h3 id="_9">Добавили</h3>
+<ul>
+<li>Создание сайта <code>create.sites</code></li>
+<li>Удаление сайта <code>delete.sites</code></li>
+<li>Редактирование сайта <code>update.sites</code></li>
+</ul>
+<h2 id="207-2018-11-29">[2.0.7] - 2018-11-29</h2>
+<h3 id="_10">Добавили</h3>
+<ul>
+<li>Получение статистики РК по дням. Метод <code>get.campaign_daily_stat</code></li>
+<li>Получение списка виртуальных номеров доступных для подключения <code>get.available_virtual_numbers"</code></li>
+<li>Подключение виртуального номера <code>enable.virtual_numbers</code></li>
+<li>Отключение виртуального номера <code>disable.virtual_numbers</code></li>
+<li>Добавили параметр <code>include_ongoing_calls</code> "Включить текущие вызовы" для метода get.calls_report</li>
+</ul>
+<h2 id="206-2018-08-10">[2.0.6] - 2018-08-10</h2>
+<h3 id="_11">Добавили</h3>
+<ul>
+<li>Добавили в методы <code>create.employees</code>, <code>get.employees</code>, <code>update.employees</code> параметры управления статусом сотрудника и разрешениями на связь: <code>status</code>, <code>allowed_in_call_types</code>, <code>allowed_out_call_types</code>;</li>
+<li>Параметр <code>calls_available</code> будет удален из методов <code>create.employees</code>, <code>get.employees</code>, <code>update.employees</code> через 2-а месяца. Параметр не рекомендуется к использованию.</li>
+</ul>
+<h2 id="205-2018-07-12">[2.0.5] - 2018-07-12</h2>
+<h3 id="_12">Добавили</h3>
+<ul>
+<li>Добавили параметр время обработки потерянных звонков "lost_call_processing_duration" в метод <code>get.calls_report</code>;</li>
+<li>Добавили новый метод получения списка сценариев <code>get.scenarios</code>;</li>
+<li>Добавили новый метод получения медиафайлов - системные, пользовательские <code>get.media_files</code>.</li>
+</ul>
+<h2 id="204-2018-02-15">[2.0.4] - 2018-02-15</h2>
+<h3 id="_13">Добавили</h3>
+<ul>
+<li>Добавили возможность получения списка сайтов. Метод <code>get.sites</code>;</li>
+<li>Добавили возможность получения списка блоков номеров сайта. Метод <code>get.site_blocks</code>;</li>
+<li>В методах создания сотрудника и группы сотрудников максимальная длина внутреннего номера расширена до 5 знаков;</li>
+<li>Добавили возможность управления SIP-линиями. Методы <code>get.sip_lines</code>, <code>create.sip_lines</code>, <code>update.sip_lines</code>, <code>delete.sip_lines</code>, <code>update.sip_line_password</code>.</li>
+</ul>
+<h2 id="203-2018-02-07">[2.0.3] - 2018-02-07</h2>
+<h3 id="_14">Добавили</h3>
+<ul>
+<li>Добавили возможность получения списка подключенных виртуальных номеров. Метод <code>get.virtual_numbers</code>;</li>
+<li>В метод <code>get.goals_report</code> добавили информацию об интегрированных целях. Параметры <code>type</code>, <code>source</code>, <code>ext_id</code>;</li>
+<li>В метод <code>get.calls_report</code> добавили регион номера абонента. Параметр <code>cpn_region_id</code>, <code>cpn_region_name</code>;</li>
+<li>В метод <code>get.call_legs_report</code> добавили информацию о группе в рамках которой был звонок, а так же информацию об операции в рамках которой звонок был создан. Параметры <code>group_id</code>, <code>group_name</code>, <code>action_id</code>, <code>action_name</code>.</li>
+</ul>
+<h2 id="202-2018-01-29">[2.0.2] - 2018-01-29</h2>
+<h3 id="_15">Добавили</h3>
+<ul>
+<li>Методы управления рекламными кампаниями - создание, удаление, получение, редактирование;</li>
+<li>В метод "Управление отчетами -&gt; get.visitor_sessions_report" добавили информацию об интегрированных рекламных кампаниях. Параметр <code>integrated_campaign_data</code>;</li>
+<li>В методе <code>get.calls_report</code> расширили допустимое значение параметра <code>finish_reason</code>.</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--next" aria-label="Next: Общая информация" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Общая информация
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../js/init.js"></script>
+      
+    
+  </body>
+</html>
