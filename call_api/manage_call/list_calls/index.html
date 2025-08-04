@@ -1,0 +1,594 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>List calls - Call API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Call API" class="md-header__button md-logo" aria-label="Call API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Call API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              List calls
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Call API" class="md-nav__button md-logo" aria-label="Call API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Call API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Call API
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Получить список активных разговоров
+  </a>
+  
+    <nav class="md-nav" aria-label="Получить список активных разговоров">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Параметры запроса
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Параметры ответа
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Пример запроса
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Пример ответа
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>List calls</h1>
+                
+                <h4 id="_1">Получить список активных разговоров</h4>
+<table>
+    <tbody>
+        <tr>
+            <th>Метод</th>
+            <th><code>list.calls</code></th>
+        </tr>
+        <tr>
+            <td>Версия API</td>
+            <td>v4.0</td>
+        </tr>
+        <tr>
+            <td>Описание</td>
+            <td>Получить список активных вызовов и их участников</td>
+        </tr>
+        <tr>
+            <td colspan="2"><a href="../../#_18"><a href="../../#_18">Вернуться к списку методов</a></a></td>
+        </tr>
+    </tbody>
+</table>
+
+<h5 id="_2">Параметры запроса</h5>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Тип</th>
+<th>Обязательный</th>
+<th>Допустимые значения</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>access_token</td>
+<td>string</td>
+<td>да</td>
+<td></td>
+<td>Ключ сессии аутентификации</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>string</td>
+<td>нет</td>
+<td>in, out</td>
+<td>Указывает какие сессии выводить - входящие, исходящие. Если параметр не задан, то выводятся все сессии.</td>
+</tr>
+<tr>
+<td>virtual_phone_number</td>
+<td>string</td>
+<td>нет</td>
+<td></td>
+<td>Указывает с каким виртуальным номер активные вызовы показывать. <blockquote>Номер должен начинаться с 7</blockquote></td>
+</tr>
+</tbody>
+</table>
+<h5 id="_3">Параметры ответа</h5>
+<table>
+    <tbody>
+        <tr>
+            <th colspan="2">Название</th>
+            <th>Тип</th>
+            <th>Обязательный</th>
+            <th>Допустимые значения</th>
+            <th>Описание</th>
+        </tr>
+        <tr>
+            <td colspan="2">call_session_id</td>
+            <td>number</td>
+            <td>да</td>
+            <td></td>
+            <td>
+                Уникальный идентификатор сессии звонка, который может быть получен в ответном сообщении при вызове
+                методов start.informer_call, start.vnumber_call, start.scenario_call, start.employee_call, с помощью сервера уведомлений или DATA API.
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">direction</td>
+            <td>string</td>
+            <td>да</td>
+            <td>in, out</td>
+            <td>Направление сесси звонка</td>
+        </tr>
+        <tr>
+            <td colspan="2">start_time</td>
+            <td>string</td>
+            <td>да</td>
+            <td></td>
+            <td>Время начала вызова. Формат <code>YYYY-MM-DD hh:mm:ss</code></td>
+        </tr>
+        <tr>
+            <td colspan="2">virtual_phone_number</td>
+            <td>string</td>
+            <td>да</td>
+            <td></td>
+            <td>Виртуальный номер, который был использован как номер представления.</td>
+        </tr>
+        <tr>
+            <td colspan="2">contact_phone_number</td>
+            <td>string</td>
+            <td>да</td>
+            <td></td>
+            <td>Номер абонента</td>
+        </tr>
+        <tr>
+            <td colspan="2">external_id</td>
+            <td>string</td>
+            <td>да</td>
+            <td></td>
+            <td>Уникальный идентификатор запроса во внешней системе клиента</td>
+        </tr>
+        <tr>
+            <td colspan="6" align="center">Список проставленных тегов</td>
+        </tr>
+        <tr>
+            <td colspan="2">tags</td>
+            <td>array</td>
+            <td>да</td>
+            <td></td>
+            <td>Список проставленных тегов</td>
+        </tr>
+        <tr>
+            <td width="15"></td>
+            <td>tag_id</td>
+            <td>number</td>
+            <td>да</td>
+            <td></td>
+            <td>Уникальный идентификатор тега</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>tag_name</td>
+            <td>string</td>
+            <td>да</td>
+            <td></td>
+            <td>Имя тега</td>
+        </tr>
+        <tr>
+            <td colspan="6" align="center">Участники сессии звонка</td>
+        </tr>
+        <tr>
+            <td colspan="2">legs</td>
+            <td>array</td>
+            <td>да</td>
+            <td></td>
+            <td>Список участников сессии звонка</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>leg_id</td>
+            <td>number</td>
+            <td>да</td>
+            <td></td>
+            <td>Уникальный идентификатор плеча</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>calling_phone_number</td>
+            <td>string</td>
+            <td>да</td>
+            <td></td>
+            <td>Номер вызывающего абонента</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>called_phone_number</td>
+            <td>string</td>
+            <td>да</td>
+            <td></td>
+            <td>Номер вызываемого абонента</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>is_operator</td>
+            <td>boolean</td>
+            <td>да</td>
+            <td>true, false</td>
+            <td>Признак, который идентифицирует плечо, у которого есть права на выполнение опций разговора</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>employee_id</td>
+            <td>number</td>
+            <td>да</td>
+            <td></td>
+            <td>Уникальный идентификатор сотрудника</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>employee_full_name</td>
+            <td>string</td>
+            <td>да</td>
+            <td></td>
+            <td>Ф.И.О сотрудника</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>record_call_enabled</td>
+            <td>boolean</td>
+            <td>да</td>
+            <td>true, false</td>
+            <td>
+                <p>Включена/Выключена запись разговора.<br> <code>true</code> - включена, <code>false</code> - выключена</p>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>state</td>
+            <td>string</td>
+            <td>да</td>
+            <td></td>
+            <td>
+                <p>Состояние участника разговора</p>
+                Возможные значения:
+                <ul>
+                    <li>Дозвон
+                    </li>
+                    <li>Разговор
+                    </li>
+                    <li>На очереди
+                    </li>
+                    <li>Разъединено
+                    </li>
+                    <li>Разговор операторов
+                    </li>
+                    <li>На удержании
+                    </li>
+                    <li>Перевод вызова
+                    </li>
+                    <li>Отправка dtmf
+                    </li>
+                    <li>Получение факса
+                    </li>
+                    <li>Факс получен
+                    </li>
+                    <li>Отправка факса
+                    </li>
+                    <li>Факс отправлен
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h5 id="_4">Пример запроса</h5>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;method&quot;: &quot;list.calls&quot;,
+  &quot;id&quot;: &quot;req1&quot;,
+  &quot;params&quot;: {
+    &quot;access_token&quot;: &quot;2fRN4g217ca0b4224a67988aff3e584f91964a692045415f36fa66146f5a3c1ae1f6093d&quot;,
+    &quot;direction&quot;: &quot;in&quot;,
+    &quot;virtual_phone_number&quot;: &quot;74951045771&quot;
+  }
+}
+</code></pre>
+<h5 id="_5">Пример ответа</h5>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;req1&quot;,
+  &quot;result&quot;: {
+    &quot;data&quot;: [
+      {
+        &quot;call_session_id&quot;: 206597836,
+        &quot;direction&quot;: &quot;in&quot;,
+        &quot;start_time&quot;: &quot;2016-10-19T12:26:48.418&quot;,
+        &quot;virtual_phone_number&quot;: &quot;74951045771&quot;,
+        &quot;contact_phone_number&quot;: &quot;74959268686&quot;,
+        &quot;external_id&quot;: null,
+        &quot;tags&quot;: [
+          {
+            &quot;tag_id&quot;: 456,
+            &quot;tag_name&quot;: &quot;Целевой&quot;
+          }
+        ],
+        &quot;legs&quot;: [
+          {
+            &quot;leg_id&quot;: 287866245,
+            &quot;calling_phone_number&quot;: &quot;74951045771&quot;,
+            &quot;called_phone_number&quot;: &quot;74959268686...9.2.3.3&quot;,
+            &quot;is_operator&quot;: false,
+            &quot;employee_id&quot;: null,
+            &quot;employee_full_name&quot;: null,
+            &quot;record_call_enabled&quot;: true,
+            &quot;state&quot;: &quot;Разговор&quot;
+          },
+          {
+            &quot;leg_id&quot;: 287866221,
+            &quot;calling_phone_number&quot;: &quot;74959268686&quot;,
+            &quot;called_phone_number&quot;: &quot;79262444393&quot;,
+            &quot;is_operator&quot;: true,
+            &quot;employee_id&quot;: 2345,
+            &quot;employee_full_name&quot;: &quot;Тест&quot;,
+            &quot;record_call_enabled&quot;: true,
+            &quot;state&quot;: &quot;Разговор&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

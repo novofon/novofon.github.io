@@ -1,0 +1,1139 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Получение списка метрик - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="DATA API" class="md-header__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DATA API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Получение списка метрик
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Общая информация
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/" class="md-nav__link">
+        Права и компоненты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../account/get_account/" class="md-nav__link">
+        Аккаунт
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vn/" class="md-nav__link">
+        Виртуальные номера
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sip/" class="md-nav__link">
+        SIP-линии
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scenario/get_scenarios/" class="md-nav__link">
+        Сценарии
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user_media/get_media_files/" class="md-nav__link">
+        Медиафайлы
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../campaigns/" class="md-nav__link">
+        Рекламные кампании
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sales_funnel_and_deals/" class="md-nav__link">
+        Воронки продаж и Сделки
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sites/" class="md-nav__link">
+        Сайты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/" class="md-nav__link">
+        Отчёты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tags/" class="md-nav__link">
+        Теги
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../employees/" class="md-nav__link">
+        Сотрудники
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contacts/" class="md-nav__link">
+        Адресная книга
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blacklist/" class="md-nav__link">
+        Черный список
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../schedules/" class="md-nav__link">
+        Графики активности
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../report/get_campaign_daily_stat/" class="md-nav__link">
+        Получения статистики РК по дням
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../partners/" class="md-nav__link">
+        Клиенты агентов
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../communications/" class="md-nav__link">
+        Загрузка коммуникаций
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../persons/" class="md-nav__link">
+        Персона/Визитор
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Параметры запроса
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Параметры ответа
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Список возможных агрегатов
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    JSON структура запроса
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json_1" class="md-nav__link">
+    JSON структура ответа
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json_2" class="md-nav__link">
+    JSON Пример ответа
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Список возвращаемых ошибок
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Получение списка метрик</h1>
+                
+                <nav>
+<a href="../get_metrics"> Получение списка метрик </a> >
+Получение списка метрик
+</nav>
+
+<table>
+<thead>
+<tr>
+<th align="left">Метод</th>
+<th align="left"><code>get.metrics</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Описание</td>
+<td align="left">Получение списка метрик</td>
+</tr>
+<tr>
+<td align="left">Кому доступен</td>
+<td align="left">Агент, Клиент</td>
+</tr>
+<tr>
+<td align="left">Необходимые компоненты для работы с методом</td>
+<td align="left">Data API для настройки</td>
+</tr>
+<tr>
+<td align="left">Вес метода</td>
+<td align="left">1 балл</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">Параметры запроса</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Название</th>
+<th align="left">Тип</th>
+<th align="center">Обязательный</th>
+<th align="left">Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>access_token</code></td>
+<td align="left">string</td>
+<td align="center">да</td>
+<td align="left">Ключ сессии аутентификации</td>
+</tr>
+<tr>
+<td align="left"><code>user_id</code></td>
+<td align="left">number</td>
+<td align="center">нет</td>
+<td align="left">Уникальный идентификатор пользователя клиента агента от имени которого делается запрос <blockquote>Является обязательным для агента</blockquote> Для получения списка пользователей клиента необходимо использовать метод <a href="../../Partners.md#get_customer_user">"get.customer_users"</a></td>
+</tr>
+<tr>
+<td align="left"><code>report_type</code></td>
+<td align="left">enum</td>
+<td align="center">да</td>
+<td align="left">Тип отчета пользователя. Для получения списка отчетов пользователей необходимо использовать метод <a href="../get_reports_list">"get.reports_list"</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">Параметры ответа</h3>
+<table>
+  <tbody>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Допустимые значения</th>
+      <th>Ответ по умолчанию</th>
+      <th>Описание</th>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>enum</td>
+      <td></td>
+      <td>да</td>
+      <td>Уникальная мнемоника метрики</td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td>string</td>
+      <td></td>
+      <td>да</td>
+      <td>Название метрики</td>
+    </tr>
+    <tr>
+      <td><code>data_type</code></td>
+      <td>enum</td>
+      <td></td>
+      <td>да</td>
+      <td>Формат данных</td>
+    </tr>
+    <tr>
+      <td colspan="5">Список агрегатов доступный для метрики</td>
+    </tr>
+    <tr>
+      <td><code>aggregates</code></td>
+      <td>array</td>
+      <td></td>
+      <td>да</td>
+      <td>Список агрегатов доступный для выбранной метрики</td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>enum</td>
+      <td></td>
+      <td></td>
+      <td>Уникальная мнемоника агрегата</td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td>string</td>
+      <td></td>
+      <td></td>
+      <td>Название агрегата</td>
+    </tr>
+    <tr>
+      <td><code>has_percentage</code></td>
+      <td>boolean</td>
+      <td></td>
+      <td></td>
+      <td>Возможен ли расчет доли</td>
+    </tr>
+    <tr>
+      <td><code>is_default</code></td>
+      <td>boolean</td>
+      <td></td>
+      <td></td>
+      <td>Агрегат по умолчанию</td>
+    </tr>
+    <tr>
+      <td colspan="5">Список способов мультиканального анализа доступных для метрики</td>
+    </tr>
+    <tr>
+      <td><code>multichannel_models</code></td>
+      <td>object</td>
+      <td></td>
+      <td>да</td>
+      <td>Список способов мультиканального анализа доступных для метрики.</td>
+    </tr>
+    <tr>
+      <td colspan="7">Способы мультиканального анализа</td>
+    </tr> 
+      <td><code>models</code></td>
+      <td>array</td>
+      <td></td>
+      <td>да</td>
+      <td>Способы мультиканального анализа.</td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>enum</td>
+      <td></td>
+      <td></td>
+      <td>Уникальная мнемоника мультиканального анализа</td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td>string</td>
+      <td></td>
+      <td></td>
+      <td>Название мультиканального анализа</td>
+    </tr>
+    <tr>
+      <td><code>description</code></td>
+      <td>string</td>
+      <td></td>
+      <td></td>
+      <td>Описание мультиканального анализа</td>
+    </tr>
+    <tr>
+      <td><code>is_default</code></td>
+      <td>boolean</td>
+      <td></td>
+      <td></td>
+      <td>Мультиканальный анализ по умолчанию</td>
+    </tr>
+    <tr>
+      <td><code>group_id</code></td>
+      <td>string</td>
+      <td></td>
+      <td></td>
+      <td>Группа мультиканального анализа</td>
+    </tr>
+    <tr>
+      <td><code>sort</code></td>
+      <td>number</td>
+      <td></td>
+      <td></td>
+      <td>Сквозной идентификатор, используемый для сортировки в дереве.</td>
+    </tr>
+    <tr>
+      <td colspan="7">Группы мультиканального анализа</td>
+    </tr>
+    <tr>
+      <td><code>models_groups</code></td>
+      <td>array</td>
+      <td></td>
+      <td>да</td>
+      <td>Список групп мультиканального анализа</td>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td>string</td>
+      <td></td>
+      <td></td>
+      <td>Мнемоника группы мультиканального анализа</td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td>string</td>
+      <td></td>
+      <td></td>
+      <td>Название группы мультиканального анализа</td>
+    </tr>
+    <tr>
+      <td><code>description</code></td>
+      <td>string</td>
+      <td></td>
+      <td></td>
+      <td>Описание группы мультиканального анализа.</td>
+    </tr>
+    <tr>
+      <td><code>parent_group_id</code></td>
+      <td>number</td>
+      <td></td>
+      <td></td>
+      <td>Идентификатор группы во вложении которой находится данная группа мультиканального анализа</td>
+    </tr>
+    <tr>
+      <td><code>sort</code></td>
+      <td>number</td>
+      <td></td>
+      <td></td>
+      <td>Сквозной идентификатор, используемый для сортировки.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="_3">Список возможных агрегатов</h3>
+<table>
+  <tbody>
+    <tr>
+      <th>Мнемоника</th>
+      <th>Название</th>
+      <th>Используется ли расчет доли</th>
+      <th>Описание</th>
+    </tr>
+    <tr>
+      <td><code>count</code></td>
+      <td>Количество</td>
+      <td>Да</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>distinctcount</code></td>
+      <td>Количество уникальных</td>
+      <td>Да</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>sum</code></td>
+      <td>Сумма</td>
+      <td>Да</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>avg</code></td>
+      <td>Среднее</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>median</code></td>
+      <td>Медиана</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>min</code></td>
+      <td>Минимум</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>max</code></td>
+      <td>Максимум</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="json">JSON структура запроса</h3>
+<pre><code class="language-json">{
+    &quot;jsonrpc&quot;:&quot;2.0&quot;,
+    &quot;id&quot;:&quot;number&quot;,
+    &quot;method&quot;:&quot;get.metrics&quot;,
+    &quot;params&quot;:{
+        &quot;access_token&quot;:&quot;string&quot;,
+        &quot;user_id&quot;:&quot;number&quot;,
+        &quot;report_type&quot;: &quot;enum&quot;
+    }
+}
+</code></pre>
+<h3 id="json_1">JSON структура ответа</h3>
+<pre><code class="language-JSON">{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: &quot;number&quot;,
+    &quot;result&quot;: {
+        &quot;metadata&quot;: {
+
+        },
+        &quot;data&quot;: [
+            {
+              &quot;id&quot;: &quot;enum&quot;,
+              &quot;name&quot;: &quot;string&quot;,
+              &quot;data_type&quot;: &quot;enum&quot;,
+              &quot;aggregates&quot;: [
+                    {
+                    &quot;id&quot;: &quot;enum&quot;,
+                    &quot;name&quot;: &quot;string&quot;,
+                    &quot;has_percentage&quot;: &quot;boolean&quot;,
+                    &quot;is_default&quot;: &quot;boolean&quot;
+                    }
+              ],
+              &quot;multichannel_models&quot;: {
+                    &quot;models_groups&quot;: [
+                          {
+                            &quot;id&quot;: &quot;number&quot;,
+                            &quot;name&quot;: &quot;string&quot;,
+                            &quot;description&quot;: &quot;string&quot;,
+                            &quot;parent_group_id&quot;: &quot;number&quot;,
+                            &quot;sort&quot;: &quot;number&quot;
+                          }
+                    ],
+                    &quot;models&quot;: [
+                          {
+                            &quot;id&quot;: &quot;string&quot;,
+                            &quot;name&quot;: &quot;string&quot;,
+                            &quot;description&quot;: &quot;string&quot;,
+                            &quot;is_default&quot;: &quot;boolean&quot;,
+                            &quot;group_id&quot;: &quot;string&quot;,
+                            &quot;sort&quot;: &quot;number&quot;,
+                          }
+                     ]
+              }
+            }
+        ]
+    }
+}
+</code></pre>
+<h3 id="json_2">JSON Пример ответа</h3>
+<pre><code class="language-JSON">{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: &quot;number&quot;,
+    &quot;result&quot;: {
+        &quot;metadata&quot;: {
+
+        },
+        &quot;data&quot;: [
+            {
+                &quot;id&quot;: &quot;visit_depth&quot;,
+                &quot;name&quot;: &quot;Глубина просмотра&quot;,
+                &quot;data_type&quot;: &quot;float&quot;,
+                &quot;aggregates&quot;: [
+                    {
+                        &quot;id&quot;: &quot;median&quot;,
+                        &quot;name&quot;: &quot;медиана&quot;,
+                        &quot;is_default&quot;: false,
+                        &quot;has_percentage&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;amount&quot;,
+                        &quot;name&quot;: &quot;количество&quot;,
+                        &quot;is_default&quot;: false,
+                        &quot;has_percentage&quot;: true
+                    },
+                    {
+                        &quot;id&quot;: &quot;min&quot;,
+                        &quot;name&quot;: &quot;минимум&quot;,
+                        &quot;is_default&quot;: false,
+                        &quot;has_percentage&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;max&quot;,
+                        &quot;name&quot;: &quot;максимум&quot;,
+                        &quot;is_default&quot;: false,
+                        &quot;has_percentage&quot;: false
+                    },
+                    {
+                        &quot;id&quot;: &quot;avg&quot;,
+                        &quot;name&quot;: &quot;среднее&quot;,
+                        &quot;is_default&quot;: true,
+                        &quot;has_percentage&quot;: false
+                    }
+                ],
+                &quot;multichannel_models&quot;: {
+                    &quot;models&quot;: null,
+                    &quot;models_groups&quot;: null
+                }
+            },
+            {
+                &quot;id&quot;: &quot;chats&quot;,
+                &quot;name&quot;: &quot;Чаты&quot;,
+                &quot;data_type&quot;: &quot;integer&quot;,
+                &quot;aggregates&quot;: [
+                    {
+                        &quot;id&quot;: &quot;count&quot;,
+                        &quot;name&quot;: &quot;количество&quot;,
+                        &quot;is_default&quot;: true,
+                        &quot;has_percentage&quot;: true
+                    }
+                ],
+                &quot;multichannel_models&quot;: {
+                    &quot;models&quot;: [
+                        {
+                            &quot;id&quot;: &quot;assisted_conversions&quot;,
+                            &quot;name&quot;: &quot;Ассоциированные взаимодействия&quot;,
+                            &quot;sort&quot;: 10,
+                            &quot;group_id&quot;: null,
+                            &quot;is_default&quot;: false,
+                            &quot;description&quot;: &quot;Ассоциированные взаимодействия, которые вспомогательно принес канал.&quot;
+                        },
+                        {
+                            &quot;id&quot;: &quot;total_conversions&quot;,
+                            &quot;name&quot;: &quot;Всего взаимодействий&quot;,
+                            &quot;sort&quot;: 20,
+                            &quot;group_id&quot;: null,
+                            &quot;is_default&quot;: false,
+                            &quot;description&quot;: &quot;Сумма уникальных взаимодействий который принес канал как напрямую так и ассоциированно.&quot;
+                        },
+                        {
+                            &quot;id&quot;: &quot;last_click&quot;,
+                            &quot;name&quot;: &quot;Последнее взаимодействие&quot;,
+                            &quot;sort&quot;: 101,
+                            &quot;group_id&quot;: &quot;attribution_models&quot;,
+                            &quot;is_default&quot;: true,
+                            &quot;description&quot;: &quot;При использовании этой модели для каждого взаимодействия определяется последний источник перехода, без учета истории посещений посетителя.&quot;
+                        },
+                        {
+                            &quot;id&quot;: &quot;last_nondirect_click&quot;,
+                            &quot;name&quot;: &quot;Последнее непрямое взаимодействие&quot;,
+                            &quot;sort&quot;: 102,
+                            &quot;group_id&quot;: &quot;attribution_models&quot;,
+                            &quot;is_default&quot;: false,
+                            &quot;description&quot;: &quot;При использовании этой модели для каждого взаимодействия определяется источник предшествующий источнику прямого перехода (в рамках которого было взаимодействие).&quot;
+                        },
+                        {
+                            &quot;id&quot;: &quot;first_click&quot;,
+                            &quot;name&quot;: &quot;Первое взаимодействие&quot;,
+                            &quot;sort&quot;: 103,
+                            &quot;group_id&quot;: &quot;attribution_models&quot;,
+                            &quot;is_default&quot;: false,
+                            &quot;description&quot;: &quot;При использовании этой модели для каждого взаимодействия определяется первый источник перехода посетителя, т.е. тот источник который первым привел на сайт вашего посетителя.&quot;
+                        },
+                        {
+                            &quot;id&quot;: &quot;linear&quot;,
+                            &quot;name&quot;: &quot;Линейная&quot;,
+                            &quot;sort&quot;: 104,
+                            &quot;group_id&quot;: &quot;attribution_models&quot;,
+                            &quot;is_default&quot;: false,
+                            &quot;description&quot;: &quot;При использовании этой модели каждое взаимодействие разделяется на количество посещений совершенных посетителем до данного взаимодействия, т.е. каждому посещению присваивается равная часть взаимодействия.&quot;
+                        },
+                        {
+                            &quot;id&quot;: &quot;time_decay&quot;,
+                            &quot;name&quot;: &quot;С учётом давности взаимодействия&quot;,
+                            &quot;sort&quot;: 105,
+                            &quot;group_id&quot;: &quot;attribution_models&quot;,
+                            &quot;is_default&quot;: false,
+                            &quot;description&quot;: &quot;При использовании этой модели присваивается большая ценность взаимодействия тем посещениям, которые находятся ближе к моменту взаимодействия. Ценность уменьшается в два раза за каждые 7 дней до взаимодействия. То есть, посещение которое было за 7 дней до взаимодействия, имеет в два раза меньшую ценность, чем посещение в день взаимодействия. При этом посещение которое было за 14 дней до взаимодействия, имеет в 4 раза меньшую ценность.&quot;
+                        },
+                        {
+                            &quot;id&quot;: &quot;position_based_402040&quot;,
+                            &quot;name&quot;: &quot;С учётом привязки к позиции (40-20-40)&quot;,
+                            &quot;sort&quot;: 106,
+                            &quot;group_id&quot;: &quot;attribution_models&quot;,
+                            &quot;is_default&quot;: false,
+                            &quot;description&quot;: &quot;При использовании этой модели каждому первому и последнему посещению присваивается 40% взаимодействия, а оставшиеся 20% взаимодействия равномерно распределяются оставшимся посещениям.&quot;
+                        },
+                        {
+                            &quot;id&quot;: &quot;position_based_206020&quot;,
+                            &quot;name&quot;: &quot;С учётом привязки к позиции (20-60-20)&quot;,
+                            &quot;sort&quot;: 107,
+                            &quot;group_id&quot;: &quot;attribution_models&quot;,
+                            &quot;is_default&quot;: false,
+                            &quot;description&quot;: &quot;При использовании этой модели каждому первому и последнему посещению присваивается 20% взаимодействия, а оставшиеся 60% взаимодействия равномерно распределяются оставшимся посещениям.&quot;
+                        },
+                        {
+                            &quot;id&quot;: &quot;position_based_105040&quot;,
+                            &quot;name&quot;: &quot;С учетом привязки к позиции (10-50-40)&quot;,
+                            &quot;sort&quot;: 108,
+                            &quot;group_id&quot;: &quot;attribution_models&quot;,
+                            &quot;is_default&quot;: false,
+                            &quot;description&quot;: &quot;При использовании этой модели каждому первому посещению присваивается 10% взаимодействия, последнему посещению присваивается 40% взаимодействия, а оставшиеся 50% взаимодействия равномерно распределяются оставшимся посещениям.&quot;
+                        }
+                    ],
+                    &quot;models_groups&quot;: [
+                        {
+                            &quot;id&quot;: &quot;attribution_models&quot;,
+                            &quot;name&quot;: &quot;Модели атрибуции&quot;,
+                            &quot;sort&quot;: 100,
+                            &quot;parent_group_id&quot;: &quot;number&quot;,
+                            &quot;description&quot;: null
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
+</code></pre>
+<h3 id="_4">Список возвращаемых ошибок</h3>
+<p>Смотрим раздел <a href="../../..#_getErrors">"Список ошибок для методов с глаголом get"</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../../js/init.js"></script>
+      
+    
+  </body>
+</html>

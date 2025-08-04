@@ -1,0 +1,1023 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Редактирование рекламной кампании - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DATA API" class="md-header__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DATA API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Редактирование рекламной кампании
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Общая информация
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/" class="md-nav__link">
+        Права и компоненты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account/get_account/" class="md-nav__link">
+        Аккаунт
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vn/" class="md-nav__link">
+        Виртуальные номера
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sip/" class="md-nav__link">
+        SIP-линии
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scenario/get_scenarios/" class="md-nav__link">
+        Сценарии
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user_media/get_media_files/" class="md-nav__link">
+        Медиафайлы
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaigns/" class="md-nav__link">
+        Рекламные кампании
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sales_funnel_and_deals/" class="md-nav__link">
+        Воронки продаж и Сделки
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/" class="md-nav__link">
+        Сайты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/" class="md-nav__link">
+        Отчёты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        Теги
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../employees/" class="md-nav__link">
+        Сотрудники
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contacts/" class="md-nav__link">
+        Адресная книга
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blacklist/" class="md-nav__link">
+        Черный список
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedules/" class="md-nav__link">
+        Графики активности
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../report/get_campaign_daily_stat/" class="md-nav__link">
+        Получения статистики РК по дням
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../partners/" class="md-nav__link">
+        Клиенты агентов
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../communications/" class="md-nav__link">
+        Загрузка коммуникаций
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../persons/" class="md-nav__link">
+        Персона/Визитор
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Параметры запроса
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    JSON структура запроса
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json_1" class="md-nav__link">
+    JSON структура ответа
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Список возвращаемых ошибок
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Редактирование рекламной кампании</h1>
+                
+                <nav>
+<a href="../../Campaigns">Рекламные кампании</a> >
+Редактирование рекламной кампании
+</nav>
+
+<table>
+<thead>
+<tr>
+<th align="left">Метод</th>
+<th align="left"><code>update.campaigns</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Описание</td>
+<td align="left">Редактирование рекламной кампании. <blockquote>Можно редактировать только рекламную кампания с типом 'basic'.</blockquote></td>
+</tr>
+<tr>
+<td align="left">Кому доступен</td>
+<td align="left">Агент, Клиент</td>
+</tr>
+</tbody>
+</table>
+<blockquote>Возможно частичное обновление. Если обновляется массив данных, то переданный массив будет полностью заменять существующий.</blockquote>
+<blockquote>Для системных рекламных кампаний (с <code>id = -1</code>) и интегрированных кампании можно редактировать только поля <code>site_blocks</code> и <code>dynamic_call_tracking</code></blockquote>
+
+<h3 id="_1">Параметры запроса</h3>
+<table>
+    <tbody>
+        <tr>
+            <th>Название</th>
+            <th>Тип</th>
+            <th>Обязательный</th>
+            <th>Допустимые значения</th>
+            <th>Описание</th>
+        </tr>
+        <tr>
+            <td><code>access_token</code></td>
+            <td>string</td>
+            <td>да</td>
+            <td></td>
+            <td>Ключ сессии аутентификации</td>
+        </tr>
+        <tr>
+            <td><code>user_id</code></td>
+            <td>number</td>
+            <td>нет</td>
+            <td></td>
+            <td>
+            Уникальный идентификатор пользователя клиента агента от имени которого делается запрос <blockquote>Является обязательным для агента</blockquote> Для получения списка пользователей клиента необходимо использовать метод <a href="../../Partners/#get_customer_user">"get.customer_users"</a>
+            </td>
+        </tr>
+            <tr>
+            <td><code>id</code></td>
+            <td>number</td>
+            <td>да</td>
+            <td></td>
+            <td>
+            Уникальный идентификатор рекламной кампании
+            </td>
+        </tr>
+        <tr>
+            <td><code>name</code></td>
+            <td>string</td>
+            <td>нет</td>
+            <td></td>
+            <td>Название рекламной кампании</td>
+        </tr>
+        <tr>
+            <td><code>description</code></td>
+            <td>string</td>
+            <td>нет</td>
+            <td>Максимум 255 символов</td>
+            <td>Описание рекламной кампании</td>
+        </tr>
+        <tr>
+            <td><code>status</code></td>
+            <td>enum</td>
+            <td>нет</td>
+            <td>
+                <ul>
+                <li>active</li>
+                <li>inactive</li>
+                </ul>
+            </td>
+            <td>Статус рекламной кампании
+                <blockquote>
+                Если рекламную кампанияю с настроенными блоками перевели в статус "inactive", то все настройки блоков сбрасываются.
+                </blockquote>
+            </td>
+        </tr>
+        <tr>
+            <td><code>site_id</code></td>
+            <td>number</td>
+            <td>да</td>
+            <td></td>
+            <td>Уникальный идентификатор сайта
+            <blockquote>
+            Обновить <code>site_id</code> для существующей рекламной кампании невозможно.
+            </blockquote>
+            </td>
+        </tr>
+        <tr>
+            <td><code>campaign_conditions</code></td>
+            <td>object</td>
+            <td>нет</td>
+            <td></td>
+            <td>Условия рекламной кампании.</td>
+        </tr>
+        <tr>
+            <td colspan="5">Настройки привязки номера к блоку на сайте</td>
+        </tr>
+        <tr>
+            <td><code>site_blocks</code></td>
+            <td>array</td>
+            <td>нет</td>
+            <td></td>
+            <td>
+            Настройки привязки номера к блоку на сайте
+            <blockquote>
+            Если в списке отсутствует настроенный блок, то в случае обновления рекламной кампании, его настройки сбрасываются
+            </blockquote>
+
+            <blockquote>
+            Если рекламная кампания отключена (<code>status = inactive</code>), то этот параметр изменять нельзя. Будет возвращаться ошибка `invalid_parameters_combination`
+            </blockquote>
+            </td>
+        </tr>
+        <tr>
+            <td><code>site_block_id</code></td>
+            <td>number</td>
+            <td>да</td>
+            <td></td>
+            <td>
+            Уникальный идентификатор блока номеров
+            </td>
+        </tr>
+        <tr>
+            <td><code>phone_number_id</code></td>
+            <td>number</td>
+            <td>да</td>
+            <td></td>
+            <td>
+            Уникальный идентификатор виртуального номера.  Чтобы получить список доступных виртуальных номеров необходимо использовать метод <a href="../get_campaign_available_phone_numbers">get.campaign_available_phone_numbers</a>
+            <blockquote>
+            Если указан <code>id</code> который не возвращается методом <a href="../get_campaign_available_phone_numbers">get.campaign_available_phone_numbers</a>, то будет возвращена ошибка с мнемоникой "entity_not_found".
+            </blockquote>
+            <blockquote>
+            Номер с <code>type = call_tracking</code> может использоваться только в одной рекламной кампании. Если номер уже используется в другой рекламной кампании, то будет возвращена ошибка `already_in_use`
+            </blockquote>
+            </td>
+        </tr>
+        <tr>
+            <td><code>redirection_phone_number_id</code></td>
+            <td>number</td>
+            <td>нет</td>
+            <td></td>
+            <td>
+            Уникальный идентификатор номера переадресации. Номер переадресации используется только в том случае, если параметр <code>phone_number_id</code> имеет тип `call_tracking`. Список доступных номеров можно получить методом <a href="../get_campaign_available_redirection_phone_numbers">get.campaign_available_redirection_phone_numbers</a>.
+            <br>
+            <blockquote>
+            Обязателен для заполнения, если в параметре <code>phone_number_id</code> указан виртуальный номер с типом "call_tracking".
+            Если это не так, то будет возвращена ошибка с мнемоникой "required_parameter_missed".
+            </blockquote>
+            <blockquote>
+            Если параметр задан и в <code>phone_number_id</code> указан виртуальный номер с типом "va", то будет возвращаться ошибка `invalid_parameters_combination`
+            </blockquote>
+            <blockquote>
+            В параметре могут быть указаны только номера переадресации, которые возвращаются методом <a href="../get_campaign_available_redirection_phone_numbers">get.campaign_available_redirection_phone_numbers</a>.
+            Если это не так, то будет возвращаться ошибка с мнемоникой "invalid_parameter_value"
+            </blockquote>
+            <blockquote>
+            Доступен, если подключен компонент "va". Если параметр будет заполнен и у вас отсутствует компонент "va", то будет возвращена ошибка с мнемоникой "parameter_component_disabled"
+            </blockquote>
+            </td>
+        </tr>
+        <tr>
+            <td><code>dynamic_call_tracking_enabled</code></td>
+            <td>boolean</td>
+            <td>нет</td>
+            <td>true, false</td>
+            <td>
+            Активация динамического коллтрекинг. В пул динамического коллтрекинга можно подключить только свободные номера без флага "Использовать в ВАТС"
+            в том же коде, что и номер блока рекламной кампании по умолчанию. При отсутствии необходимого количества номеров они будут автоматически куплены.
+            Звонки на номера из пула динамического коллтрекинга будут обрабатываться по правилам обработки звонков на номер блока рекламной кампании по умолчанию.
+            <blockquote>Может принимать значение "true", если параметр <code>phone_number_id = va | call_tracking</code>. Если это не так, то будет возвращена ошибка с мнемоникой
+            "invalid_parameters_combination"</blockquote>
+            <blockquote>
+            Если Вы используете этот параметр, но у вас не подключен компонент "dynamic_call_tracking", то вам вернется
+            ошибка с мнемоникой "parameter_component_disabled"
+            </blockquote>
+
+            <blockquote>
+            Если задан одновременно <code>status = inactive</code>, то будет возвращена ошибка `invalid_parameters_combination`
+            </blockquote>
+
+            <blockquote>
+            Если параметр <code>dynamic_call_tracking_enabled</code> имеет значение "true", то параметр <code>dynamic_call_tracking</code> обязателен к заполнению. Будет возвращена ошибка "invalid_parameters_combination".
+            </blockquote>
+            </td>
+        </tr>
+        <tr>
+            <td><code>cost_ratio</code></td>
+            <td>number</td>
+            <td>минимальное значение 1</td>
+            <td></td>
+            <td>Коэфициент, который влияет на значение параметра `costs`</td>
+        </tr>
+        <tr>
+            <td><code>cost_ratio_operator</code></td>
+            <td>enum</td>
+            <td>
+                <ul>
+                    <li>wo_changes</li>
+                    <li>multiply</li>
+                    <li>divide</li>
+                </ul>
+            </td>
+            <td></td>
+            <td>Оператор, который используется при расчете `costs` с учетом `cost_ratio`</td>
+        </tr>
+        <tr>
+            <td colspan="5">Динамический коллтрекинг</td>
+        </tr>
+        <tr>
+            <td><code>dynamic_call_tracking</code></td>
+            <td>object</td>
+            <td>нет</td>
+            <td></td>
+            <td>
+            Настройка динамический коллтрекинг.
+            <blockquote>
+            Обязателен к заполнению, если параметр <code>dynamic_call_tracking_enabled</code> у хоть одного блока имеет значение "true" иначе будет возвращена ошибка с мнемоникой "invalid_parameters_combination"
+            </blockquote>
+            <blockquote>
+            Если Вы используете этот параметр, но у вас не подключен компонент "dynamic_call_tracking", то вам вернется
+            ошибка с мнемоникой "parameter_component_disabled"
+            </blockquote>
+            </td>
+        </tr>
+        <tr>
+            <td><code>reservation_time</code></td>
+            <td>enum</td>
+            <td>нет</td>
+            <td>
+                <ul>
+                <li>5m</li>
+                <li>10m</li>
+                <li>15m</li>
+                <li>20m</li>
+                <li>30m</li>
+                <li>1h</li>
+                <li>2h</li>
+                <li>4h</li>
+                <li>8h</li>
+                <li>1d</li>
+                <li>1w</li>
+            </ul>
+            </td>
+            <td>
+            Период, на который номер закрепляется за посетителем сайта.
+            По истечении указанного времени номер закрепляется за новым посетителем (или остается за текущим в случае наличия свободных номеров коллтрекинга).
+            </td>
+        </tr>
+        <tr>
+            <td><code>count_virtual_numbers</code></td>
+            <td>number</td>
+            <td>да</td>
+            <td>минимальное значение 1</td>
+            <td>
+            Количество номеров необходимое для работы динамического коллтрекинга в одном блоке. Указанное количество номеров будет куплено.
+            </td>
+        </tr>
+        <tr>
+            <td><code>count_visits</code></td>
+            <td>number</td>
+            <td>да</td>
+            <td>минимальное значение 1</td>
+            <td>
+            Количество посещений по рекламной кампании в сутки
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">Настройки групп условий</td>
+        </tr>
+        <tr>
+            <td><code>group_conditions</code></td>
+            <td>array</td>
+            <td>да</td>
+            <td>Максимальное количество групп 30</td>
+            <td>
+                Группа условий рекламной кампании
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">Настройки условий</td>
+        </tr>
+        <tr>
+            <td><code>conditions</code></td>
+            <td>array</td>
+            <td>да</td>
+            <td>Максимальное количество условий для группы 50</td>
+            <td>
+                Условия рекламной кампании в группе условий
+            </td>
+        </tr>
+        <tr>
+            <td><code>type</code></td>
+            <td>enum</td>
+            <td>да</td>
+            <td>
+                <ul>
+                <li>include</li>
+                <li>exclude</li>
+                </ul>
+            </td>
+            <td>
+                Условия рекламной кампании в группе условий
+                <ul>
+                <li>include - включает</li>
+                <li>exclude - исключает</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><code>campaign_parameter</code></td>
+            <td>enum</td>
+            <td>да</td>
+            <td></td>
+            <td>
+                Список допустимых значений и возможных операторов см. в таблице <a href="../operators_values_parameters">"Список параметров и их операторов"</a>
+            </td>
+        </tr>
+        <tr>
+            <td><code>value</code></td>
+            <td>string</td>
+            <td>да</td>
+            <td></td>
+            <td>
+                Значение. Для некоторых <code>campaign_parameter</code> может быть свой список допустимых значений см. в таблице <a href="../operators_values_parameters">"Список параметров и их операторов"</a>
+            </td>
+        </tr>
+        <tr>
+            <td><code>operator</code></td>
+            <td>enum</td>
+            <td>да</td>
+            <td> =, sub, ~</td>
+            <td>
+                Оператор в условии. Зависит от используемого параметра <code>campaign_parameter</code> см. в таблице <a href="../operators_values_parameters">"Список параметров и их операторов"</a>
+                    <ul>
+                    <li>"=" - точно соответствует</li>
+                    <li>"sub" - включает</li>
+                    <li>"~" - регулярное выражение</li>
+                    </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="json">JSON структура запроса</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;method&quot;: &quot;update.campaigns&quot;,
+  &quot;params&quot;: {
+    &quot;access_token&quot;: &quot;string&quot;,
+    &quot;user_id&quot;: &quot;number&quot;,
+    &quot;description&quot;: &quot;string&quot;,
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;status&quot;: &quot;enum&quot;,
+    &quot;cost_ratio&quot;: &quot;number&quot;,
+    &quot;cost_ratio_operator&quot;: &quot;enum&quot;,
+    &quot;id&quot;: &quot;number&quot;,
+    &quot;site_id&quot;: &quot;number&quot;,
+    &quot;site_blocks&quot;: [
+      {
+        &quot;site_block_id&quot;: &quot;number&quot;,
+        &quot;phone_number_id&quot;: &quot;number&quot;,
+        &quot;redirection_phone_number_id&quot;: &quot;number&quot;,
+        &quot;dynamic_call_tracking_enabled&quot;: &quot;boolean&quot;
+      }
+    ],
+    &quot;dynamic_call_tracking&quot;: {
+      &quot;reservation_time&quot;: &quot;enum&quot;,
+      &quot;count_virtual_numbers&quot;: &quot;number&quot;,
+      &quot;count_visits&quot;: &quot;number&quot;
+    },
+    &quot;campaign_conditions&quot;: {
+      &quot;group_conditions&quot;: [
+        {
+          &quot;conditions&quot;: [
+            {
+              &quot;type&quot;: &quot;enum&quot;,
+              &quot;campaign_parameter&quot;: &quot;enum&quot;,
+              &quot;operator&quot;: &quot;enum&quot;,
+              &quot;value&quot;: &quot;string&quot;
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+</code></pre>
+<h3 id="json_1">JSON структура ответа</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;result&quot;: {
+    &quot;data&quot;: {
+
+    },
+    &quot;metadata&quot;: {
+
+    }
+  }
+}
+</code></pre>
+<h3 id="_2">Список возвращаемых ошибок</h3>
+<p>Смотрим раздел <a href="../..#_changeErrors">"Список ошибок для методов с глаголом update"</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  </body>
+</html>

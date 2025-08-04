@@ -1,0 +1,2628 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Получение отчёта по сессиям звонков - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DATA API" class="md-header__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DATA API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Получение отчёта по сессиям звонков
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Общая информация
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/" class="md-nav__link">
+        Права и компоненты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account/get_account/" class="md-nav__link">
+        Аккаунт
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vn/" class="md-nav__link">
+        Виртуальные номера
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sip/" class="md-nav__link">
+        SIP-линии
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scenario/get_scenarios/" class="md-nav__link">
+        Сценарии
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user_media/get_media_files/" class="md-nav__link">
+        Медиафайлы
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaigns/" class="md-nav__link">
+        Рекламные кампании
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sales_funnel_and_deals/" class="md-nav__link">
+        Воронки продаж и Сделки
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/" class="md-nav__link">
+        Сайты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/" class="md-nav__link">
+        Отчёты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        Теги
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../employees/" class="md-nav__link">
+        Сотрудники
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contacts/" class="md-nav__link">
+        Адресная книга
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blacklist/" class="md-nav__link">
+        Черный список
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedules/" class="md-nav__link">
+        Графики активности
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get_campaign_daily_stat/" class="md-nav__link">
+        Получения статистики РК по дням
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../partners/" class="md-nav__link">
+        Клиенты агентов
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../communications/" class="md-nav__link">
+        Загрузка коммуникаций
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../persons/" class="md-nav__link">
+        Персона/Визитор
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Получение отчёта по сессиям звонков
+  </a>
+  
+    <nav class="md-nav" aria-label="Получение отчёта по сессиям звонков">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Параметры запроса
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Параметры ответа
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Причины окончания сессии звонка
+  </a>
+  
+    <nav class="md-nav" aria-label="Причины окончания сессии звонка">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    JSON структура запроса
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json_1" class="md-nav__link">
+    JSON структура ответа
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Список возвращаемых ошибок
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Получение отчёта по сессиям звонков</h1>
+                
+                <nav>
+<a href="../../reports">Отчёты</a> >
+Получение отчёта по сессиям звонков
+</nav>
+
+<h2 id="_1">Получение отчёта по сессиям звонков</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Метод</th>
+<th align="left"><code>get.calls_report</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Описание</td>
+<td align="left">Получение отчёта по сессиям звонков</td>
+</tr>
+<tr>
+<td align="left">Кому доступен</td>
+<td align="left">Партнёр, Клиент</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">Параметры запроса</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Название</th>
+<th align="left">Тип</th>
+<th align="center">Обязательный</th>
+<th align="left">Допустимые значения</th>
+<th align="left">Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>access_token</code></td>
+<td align="left">string</td>
+<td align="center">да</td>
+<td align="left"></td>
+<td align="left">Ключ сессии аутентификации</td>
+</tr>
+<tr>
+<td align="left"><code>user_id</code></td>
+<td align="left">number</td>
+<td align="center">нет</td>
+<td align="left"></td>
+<td align="left">Уникальный идентификатор пользователя клиента агента от имени которого делается запрос <blockquote>Является обязательным для агента</blockquote> Для получения списка пользователей клиента необходимо использовать метод <a href="../../Partners/#get_customer_user">"get.customer_users"</a></td>
+</tr>
+<tr>
+<td align="left"><code>limit</code></td>
+<td align="left">number</td>
+<td align="center">нет</td>
+<td align="left"></td>
+<td align="left">Количество возвращаемых записей. См. раздел <a href="../..#_paging">"Постраничный вывод"</a></td>
+</tr>
+<tr>
+<td align="left"><code>offset</code></td>
+<td align="left">number</td>
+<td align="center">нет</td>
+<td align="left"></td>
+<td align="left">Сдвиг, определяет с какого номера записи возвращать <code>"limit"</code> записей. По умолчанию "0". См. раздел <a href="../..#_paging">"Постраничный вывод"</a></td>
+</tr>
+<tr>
+<td align="left"><code>filter</code></td>
+<td align="left">object</td>
+<td align="center">нет</td>
+<td align="left"></td>
+<td align="left">См. раздел <a href="../..#_filters">"Критерии фильтрации"</a></td>
+</tr>
+<tr>
+<td align="left"><code>fields</code></td>
+<td align="left">array</td>
+<td align="center">нет</td>
+<td align="left"></td>
+<td align="left">См. раздел <a href="../..#_views">"Представление возвращаемых данных"</a></td>
+</tr>
+<tr>
+<td align="left"><code>sort</code></td>
+<td align="left">array</td>
+<td align="center">нет</td>
+<td align="left"></td>
+<td align="left">См. раздел <a href="../..#_sort">"Сортировка данных"</a></td>
+</tr>
+<tr>
+<td align="left"><code>date_from</code></td>
+<td align="left">iso8601</td>
+<td align="center">да</td>
+<td align="left">YYYY-MM-DD hh:mm:ss</td>
+<td align="left">Дата начала выборки</td>
+</tr>
+<tr>
+<td align="left"><code>date_till</code></td>
+<td align="left">iso8601</td>
+<td align="center">да</td>
+<td align="left">YYYY-MM-DD hh:mm:ss</td>
+<td align="left">Дата окончания выбокри</td>
+</tr>
+<tr>
+<td align="left"><code>include_ongoing_calls</code></td>
+<td align="left">boolean</td>
+<td align="center">нет</td>
+<td align="left"></td>
+<td align="left">Включить текущие вызовы</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">Параметры ответа</h3>
+<table>
+    <tbody>
+        <tr>
+            <th>Название</th>
+            <th>Тип</th>
+            <th>Допустимые значения</th>
+            <th>Фильтрация</th>
+            <th>Сортировка</th>
+            <th>Ответ по умолчанию</th>
+            <th>Описание</th>
+        </tr>
+        <tr>
+            <td><code>id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td>да</td>
+            <td>Уникальный идентификатор сессии звонка</td>
+        </tr>
+        <tr>
+            <td><code>start_time</code></td>
+            <td>iso8601</td>
+            <td>YYYY-MM-DD hh:mm:ss</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td>Дата и время начала сессии звонка</td>
+        </tr>
+        <tr>
+            <td><code>finish_time</code></td>
+            <td>iso8601</td>
+            <td>YYYY-MM-DD hh:mm:ss</td>
+            <td></td>
+            <td></td>
+            <td>да</td>
+            <td>Время окончания сессии звонка</td>
+        </tr>
+        <tr>
+            <td><code>finish_reason</code></td>
+            <td>enum</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td>да</td>
+            <td>
+                Причина окончания сессии звонка. Список возможных причин представлен ниже
+            </td>
+        </tr>
+        <tr>
+            <td><code>direction</code></td>
+            <td>enum</td>
+            <td>
+                <ul>
+                    <li><code>in</code> - Входящая;</li>
+                    <li><code>out</code> - Исходящая</li>
+                </ul>
+            </td>
+            <td>да</td>
+            <td>да</td>
+            <td>да</td>
+            <td>Направление сессии звонка</td>
+        </tr>
+        <tr>
+            <td><code>cpn_region_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td>да</td>
+            <td>Уникальный идентификатор региона номера абонента</td>
+        </tr>
+        <tr>
+            <td><code>cpn_region_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td>да</td>
+            <td>Название региона номера абонента</td>
+        </tr>
+        <tr>
+            <td colspan="7">Операции сценариев</td>
+        </tr>
+        <tr>
+            <td><code>scenario_operations</code></td>
+            <td>array</td>
+            <td>
+            </td>
+            <td>да</td>
+            <td>нет</td>
+            <td>нет</td>
+            <td>Список всех операций по всем сценариям, участвующих в обработке звонка.</td>
+        </tr>
+        <tr>
+            <td><code>id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор операции сценария</td>
+        </tr>
+        <tr>
+            <td><code>name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Название операции сценария</td>
+        </tr><tr>
+            <td><code>source</code></td>
+            <td>enum</td>
+            <td>
+            <ul>
+
+<li><code>callapi</code> - Call API Базовый набор</li>
+<li><code>callapi_management_call</code> - Call API Управление вызовами</li>
+<li><code>callapi_informer_call</code> - Call API Информационный вызов</li>
+<li><code>callapi_scenario_call</code> - Call API Вызов сценария</li>
+<li><code>va</code> - Звонок ВАТС</li>
+<li><code>call_tracking</code> - Аналитика</li>
+<li><code>dynamic_call_tracking</code> - Динамический коллтрекинг</li>
+<li><code>callout</code> - Callout</li>
+<li><code>callback</code> - Callback</li>
+<li><code>faxout</code> - Факс</li>
+<li><code>sip</code> - Исходящий с SIP</li>
+<li><code>sitephone</code> - Сайтфон</li>
+<li><code>lead</code> - Лидогенератор</li>
+<li><code>retailcrm</code> - Звонок из retailCRM</li>
+<li><code>amocrm</code> - Звонок из amoCRM</li>
+<li><code>bitrix</code> - Звонок из Bitrix24</li>
+<li><code>auto_back_call_by_lost_call</code> - Автоперезвон по пропущенным звонкам</li>
+<li><code>sip_trunk</code> - Звонок с SIP-транка</li>
+<li><code>facebook_ads</code> - Звонки из Social Network Ads</li>
+<li><code>auto_back_call_by_offline_message</code> - Автоперезвон по заявкам</li>
+<li><code>private_number</code> - Проверочный звонок для добавления клиентского номера из ЛК</li>
+<li><code>auto_out_calls</code> - Исходящий обзвон</li>
+<li><code>ivr_informer</code> - Информирование с IVR</li>
+<li><code>upload_calls</code> - Звонок из внешней системы</li>
+<li><code>progressive_call</code> - Прогрессивный</li>
+<li><code>simple_dt</code> - Простой динамический коллтрекинг</li>
+<li><code>preserved_calls</code> - Сохранённая переадресация</li>
+<li><code>amocrm_extended_integration</code> - Автоперезвон из CRM</li>
+<li><code>zoho</code> - Zoho</li>
+<li><code>mytarget_ads</code> - Звонки из myTarget Ads</li>
+<li><code>pipedrive</code> - Pipedrive</li>
+<li><code>hubspot</code> - HubSpot</li>
+<li><code>smartis</code> - Звонки из Смартис</li>
+<li><code>partner_integration</code> - Партнёрская интеграция</li>
+<li><code>vk_ads</code> - Звонки из VK Ads</li>
+<li><code>omni_widget</code> - Омниканальный виджет</li>
+            </ul>
+            </td>
+            <td>да</td>
+            <td>да</td>
+            <td>да</td>
+            <td>Источник звонка</td>
+        </tr>
+        <tr>
+            <td><code>is_lost</code></td>
+            <td>boolean</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td>да</td>
+            <td>Признак, что звонок потерянный или успешный</td>
+        </tr>
+        <tr>
+            <td><code>communication_number</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Для сесии ВАТС пустой всегда, такова сейчас идеология сервиса</td>
+        </tr>
+        <tr>
+            <td><code>communication_page_url</code></td>
+            <td>string</td>
+            <td></td>
+            <td>нет</td>
+            <td>нет</td>
+            <td>нет</td>
+            <td>
+                URL страницы на которой находился посетитель в момент обращения или страница последнего взаимодействия посетителя перед обращением.
+            </td>
+        </tr>
+        <tr>
+            <td><code>contact_phone_number</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td>да</td>
+            <td>Номер контакта от которого поступил звонок в случае входящего звонка или номер контакта на который совершили звонок в случае исходящего звонка.</td>
+        </tr>
+        <tr>
+            <td><code>communication_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td>да</td>
+            <td>Уникальный идентификатор обращения</td>
+        </tr>
+        <tr>
+            <td><code>communication_type</code></td>
+            <td>enum</td>
+            <td><code>call</code></td>
+            <td></td>
+            <td></td>
+            <td>да</td>
+            <td>Тип обращения</td>
+        </tr>
+        <tr>
+            <td><code>wait_duration</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td>да</td>
+            <td>Длительность ожидания абонента до первого разговора с сотрудником. Значение в секундах.</td>
+        </tr>
+        <tr>
+            <td><code>total_wait_duration</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td>да</td>
+            <td>Полная длительность ожидания абонента на линии. Учитывает все промежутки, когда абонент не разговаривал с сотрудником. Значение в секундах</td>
+        </tr>
+        <tr>
+            <td><code>lost_call_processing_duration</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Длительность обработки пропущенного звонка. Считается от момента пропущенного разговора до первого успешного. Значение в секундах</td>
+        </tr>
+        <tr>
+            <td><code>talk_duration</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td>да</td>
+            <td>Длительность разговора. Считается от момента первого разговора абонента с сотрудником до начала постобработки. Значение в секундах</td>
+        </tr>
+        <tr>
+            <td><code>clean_talk_duration</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td>да</td>
+            <td>Чистая длительность разговора. Учитывает только те промежутки, когда абонент разговаривал с сотрудником. Значение в секундах</td>
+        </tr>
+        <tr>
+            <td><code>total_duration</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td>да</td>
+            <td>Длительность звонка, значение в секундах</td>
+        </tr>
+        <tr>
+            <td><code>postprocess_duration</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Длительность постобработки, значение в секундах</td>
+        </tr>
+        <tr>
+            <td><code>call_records</code></td>
+            <td>array</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>да</td>
+            <td>
+                Уникальный идентификатор ссылки на записанный разговор. Можно прослушать вызвав запрос в браузере: <code>https://app.novofon.ru/system/media/talk/{communication_id}/{уникальный индентификатор ссылки на записанный разговор}/</code>
+            </td>
+        </tr>
+        <tr>
+            <td><code>wav_call_records</code></td>
+            <td>array</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>да</td>
+            <td>
+                Уникальный идентификатор ссылки на записанный разговор в формате wav. Можно прослушать вызвав запрос в браузере: <code>https://app.novofon.ru/system/media/wav/{communication_id}/{уникальный индентификатор ссылки на записанный разговор в формате wav}/</code>
+            </td>
+        </tr>
+        <tr>
+            <td><code>full_record_file_link</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>да</td>
+            <td>
+                Ссылка на полную запись разговора. Можно прослушать вызвав запрос в браузере: <code>https://media.novofon.ru/{communication_id}/{уникальный индентификатор ссылки на записанный разговор}</code>
+            </td>
+        </tr>
+        <tr>
+            <td><code>voice_mail_records</code></td>
+            <td>array</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                Уникальный идентификатор ссылки на оставленное голосовое сообщение. Можно прослушать вызвав запрос в браузере: <code>https://app.novofon.ru/system/media/voice_mail/{communication_id}/{уникальный индентификатор ссылки на голосовое сообщение}/</code>
+            </td>
+        </tr>
+        <tr>
+            <td><code>virtual_phone_number</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td>да</td>
+            <td>Виртуальный номер</td>
+        </tr>
+        <tr>
+            <td><code>ua_client_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор в Universal Analytics</td>
+        </tr>
+        <tr>
+            <td><code>ym_client_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор пользователя Яндекс.Метрики</td>
+        </tr>
+        <tr>
+            <td><code>sale_date</code></td>
+            <td>iso8601</td>
+            <td>YYYY-MM-DD hh:mm:ss</td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Дата сделки</td>
+        </tr>
+        <tr>
+            <td><code>sale_cost</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Сумма сделки</td>
+        </tr>
+        <tr>
+            <td><code>is_transfer</code></td>
+            <td>boolean</td>
+            <td><code>true</code>, <code>false</code></td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Был ли трансфер в сессии звонка</td>
+        </tr>
+        <tr>
+            <td><code>search_query</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Поисковый запрос</td>
+        </tr>
+        <tr>
+            <td><code>search_engine</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Название поисковой системы</td>
+        </tr>
+        <tr>
+            <td><code>referrer_domain</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Домен реферера</td>
+        </tr>
+        <tr>
+            <td><code>referrer</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Источник перехода</td>
+        </tr>
+        <tr>
+            <td><code>entrance_page</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Страница входа</td>
+        </tr>
+        <tr>
+            <td><code>gclid</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Google Click Identifier</td>
+        </tr>
+        <tr>
+            <td><code>yclid</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Yandex Click Identifier</td>
+        </tr>
+        <tr>
+            <td><code>ymclid</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Yandex Market Click Identifier</td>
+        </tr>
+        <tr>
+            <td><code>ef_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Используется для разметки ссылок в системе AdLense</td>
+        </tr>
+        <tr>
+            <td><code>channel</code></td>
+            <td>enum</td>
+            <td>
+                <ul>
+                    <li><code>display</code></li>
+                    <li><code>paid</code></li>
+                    <li><code>affiliate</code></li>
+                    <li><code>messenger</code></li>
+                    <li><code>social</code></li>
+                    <li><code>email</code></li>
+                    <li><code>organic</code></li>
+                    <li><code>internal</code></li>
+                    <li><code>recommendation</code></li>
+                    <li><code>cashed</code></li>
+                    <li><code>referral</code></li>
+                    <li><code>direct</code></li>
+                </ul>
+            </td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Канал.</td>
+        </tr>
+        <tr>
+            <td colspan="7">Распознанный текст</td>
+        </tr>
+        <tr>
+            <td><code>recognized_text</code></td>
+            <td>array</td>
+            <td></td>
+            <td>нет</td>
+            <td>нет</td>
+            <td>нет</td>
+            <td>Массив распознанных фраз</td>
+        </tr>
+        <tr>
+            <td><code>id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор фразы</td>
+        </tr>
+        <tr>
+            <td><code>phrase</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Фраза</td>
+        </tr>
+        <tr>
+            <td><code>start_time</code></td>
+            <td>iso8601</td>
+            <td>>YYYY-MM-DD hh:mm:ss</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Время начала фразы</td>
+        </tr>
+        <tr>
+            <td><code>is_operator</code></td>
+            <td>boolean</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Признак, фраза сотрудника или абонента</td>
+        </tr>
+        <tr>
+            <td><code>edited_phrase</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Фраза, изменённая в ЛК Novofon</td>
+        </tr>
+        <tr>
+            <td colspan="7">Проставленные теги</td>
+        </tr>
+        <tr>
+            <td><code>tags</code></td>
+            <td>array</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Теги, см. метод <code>"get.tags"</code></td>
+        </tr>
+        <tr>
+            <td><code>tag_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Название тега</td>
+        </tr>
+        <tr>
+            <td><code>tag_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор тега</td>
+        </tr>
+        <tr>
+            <td><code>tag_change_time</code></td>
+            <td>iso8601</td>
+            <td>YYYY-MM-DD hh:mm:ss</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Время простановки тега</td>
+        </tr>
+        <tr>
+            <td><code>tag_type</code></td>
+            <td>enum</td>
+            <td><code>auto</code>, <code>manual</code></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Тип тега</td>
+        </tr>
+        <tr>
+            <td><code>tag_user_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор пользователя, который поставил тег</td>
+        </tr>
+        <tr>
+            <td><code>tag_user_login</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Логин пользователя, который проставил тег</td>
+        </tr>
+        <tr>
+            <td><code>tag_employee_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор сотрудника, который поставил тег</td>
+        </tr>
+        <tr>
+            <td><code>tag_employee_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Ф.И.О сотрудника, который протсавил тег</td>
+        </tr>
+        <tr>
+            <td colspan="7">Сотрудники участвовавшие в звонке</td>
+        </tr>
+        <tr>
+            <td><code>employees</code></td>
+            <td>array</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Сотрудники, которые участвовали в звонке</td>
+        </tr>
+        <tr>
+            <td><code>employee_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор сотрудника</td>
+        </tr>
+        <tr>
+            <td><code>employee_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Ф.И.О. сотрудника</td>
+        </tr>
+        <tr>
+            <td><code>is_answered</code></td>
+            <td>boolean</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Признак, поднял сотрудник трубку или нет</td>
+        </tr>
+        <tr>
+            <td><code>is_talked</code></td>
+            <td>boolean</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Признак, участвовал ли сотрудник в разговоре или нет</td>
+        </tr>
+        <tr>
+            <td colspan="7">Последний ответивший сотрудник</td>
+        </tr>
+        <tr>
+            <td><code>last_answered_employee_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор последнего сотрудника, который поднял трубку</td>
+        </tr>
+        <tr>
+            <td><code>last_answered_employee_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Ф.И.О последнего сотрудника, который поднял трубку</td>
+        </tr>
+        <tr>
+            <td><code>last_answered_employee_rating</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Оценка последнего разговаривавшего сотрудника, которую абонент поставил после завершения звонка</td>
+        </tr>
+        <tr>
+            <td colspan="7">Первый ответивший сотрудник</td>
+        </tr>
+        <tr>
+            <td><code>first_answered_employee_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор первого сотрудника, который первый поднял трубку</td>
+        </tr>
+        <tr>
+            <td><code>first_answered_employee_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Ф.И.О. первого сотрудника, который первый поднял трубку
+Последний разговаривавший сотрудник</td>
+        </tr>
+        <tr>
+            <td colspan="7">Последний разговаривавший сотрудник</td>
+        </tr>
+        <tr>
+            <td><code>last_talked_employee_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор последнего разговаривавшего сотрудника</td>
+        </tr>
+        <tr>
+            <td><code>last_talked_employee_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Ф.И.О последнего разговаривавшего сотрудника</td>
+        </tr>
+        <tr>
+            <td colspan="7">Первый разговаривавший сотрудник</td>
+        </tr>
+        <tr>
+            <td><code>first_talked_employee_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор первого разговаривавшего сотрудника</td>
+        </tr>
+        <tr>
+            <td><code>first_talked_employee_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Ф.И.О первого разговаривавшего сотрудника</td>
+        </tr>
+        <tr>
+            <td colspan="7">Оператор</td>
+        </tr>
+        <tr>
+            <td><code>operator_phone_number</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Номер оператора, принявшего звонок</td>
+        </tr>
+        <tr>
+            <td colspan="7">Сценарий</td>
+        </tr>
+        <tr>
+            <td><code>scenario_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Название сценария по которому началась обработка звонка</td>
+        </tr>
+        <tr>
+            <td><code>scenario_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Уникальный идентификатор сценария по которому началась обработка звонка</td>
+        </tr>
+        <tr>
+            <td colspan="7">Сайт</td>
+        </tr>
+        <tr>
+            <td><code>site_domain_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Адрес сайта в интернете. Без указания протокола - <code>"http://"</code> или <code>"https://"</code></td>
+        </tr>
+        <tr>
+            <td><code>site_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Уникальный идентификатор сайта</td>
+        </tr>
+        <tr>
+            <td colspan="7">Рекламная кампания</td>
+        </tr>
+        <tr>
+            <td><code>campaign_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Название рекламной кампании</td>
+        </tr>
+        <tr>
+            <td><code>campaign_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Уникальный идентификатор рекламной кампании</td>
+        </tr>
+        <tr>
+            <td><code>visit_other_campaign</code></td>
+            <td>boolean</td>
+            <td><code>true</code>, <code>false</code></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Флаг показывает заходил ли посетитель (в пределах персоны) по другим рекламным кампаниям</td>
+        </tr>
+        <tr>
+            <td><code>auto_call_campaign_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Название кампании исходящего обзвона"</td>
+        </tr>
+        <tr>
+            <td colspan="7">Информация о посетителе</td>
+        </tr>
+        <tr>
+            <td><code>visitor_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Уникальный идентификатор посетителя</td>
+        </tr>
+        <tr>
+            <td><code>person_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор персоны</td>
+        </tr>
+        <tr>
+            <td><code>visitor_type</code></td>
+            <td>enum</td>
+            <td>Новый, Вернувшийся, Не заполнен</td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Тип посетителя</td>
+        </tr>
+        <tr>
+            <td><code>visitor_session_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор сессии посетителя</td>
+        </tr>
+        <tr>
+            <td><code>visits_count</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Общее количество посещений посетителя</td>
+        </tr>
+        <tr>
+            <td><code>visitor_first_campaign_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор первой рекламной</td>
+        </tr>
+        <tr>
+            <td><code>visitor_first_campaign_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Название первой рекламной кампании</td>
+        </tr>
+        <tr>
+            <td><code>visitor_city</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Город посетителя</td>
+        </tr>
+        <tr>
+            <td><code>visitor_region</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Регион посетителя</td>
+        </tr>
+        <tr>
+            <td><code>visitor_country</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Страна посетителя</td>
+        </tr>
+        <tr>
+            <td><code>visitor_device</code></td>
+            <td>enum</td>
+            <td>
+                <ul>
+                    <li><code>desktop</code></li>
+                    <li><code>mobile</code></li>
+                    <li><code>tablet</code></li>
+                    <li><code>other</code></li>
+                </ul>
+            </td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Устройство пользователя</td>
+        </tr>
+        <tr>
+            <td colspan="7">Свойства посетителя</td>
+        </tr>
+        <tr>
+            <td><code>visitor_custom_properties</code></td>
+            <td>array</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>
+                Свойства посетителя, которые могут быть заданы помощью JavaScript API [метод <code>Novofon.setProperty</code>]
+            </td>
+        </tr>
+        <tr>
+            <td><code>property_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Имя свойства, которое должно быть присвоено</td>
+        </tr>
+        <tr>
+            <td><code>property_value</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Значение свойства</td>
+        </tr>
+        <tr>
+            <td colspan="7">Сегменты</td>
+        </tr>
+        <tr>
+            <td><code>segments</code></td>
+            <td>array</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Сегменты</td>
+        </tr>
+        <tr>
+            <td><code>segment_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор сегмента</td>
+        </tr>
+        <tr>
+            <td><code>segment_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Название сегмента</td>
+        </tr>
+        <tr>
+            <td>Call API</td>
+        </tr>
+        <tr>
+            <td><code>call_api_request_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>
+                Уникальный идентификатор запроса к API, который запросе.
+            </td>
+        </tr>
+        <tr>
+            <td><code>call_api_external_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>
+                Уникальный идентификатор, который может быть события звонка с внешней системой.
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7">Контакт из адресной книги</td>
+        </tr>
+        <tr>
+            <td><code>contact_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор контакта</td>
+        </tr>
+        <tr>
+            <td><code>contact_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Фамилия Имя Отчество контакта</td>
+        </tr>
+        <tr>
+            <td colspan="7">UTM-метки</td>
+        </tr>
+        <tr>
+            <td><code>utm_source</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Источник кампании</td>
+        </tr>
+        <tr>
+            <td><code>utm_medium</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Канал кампании</td>
+        </tr>
+        <tr>
+            <td><code>utm_term</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Ключевое слово кампании</td>
+        </tr>
+        <tr>
+            <td><code>utm_content</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Содержание кампании</td>
+        </tr>
+        <tr>
+            <td><code>utm_campaign</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Название кампании</td>
+        </tr>
+        <tr>
+            <td colspan="7">OS-метки</td>
+        </tr>
+        <tr>
+            <td><code>openstat_ad</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Идентификатор рекламного объявления</td>
+        </tr>
+        <tr>
+            <td><code>openstat_campaign</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Идентификатор рекламной кампании</td>
+        </tr>
+        <tr>
+            <td><code>openstat_service</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Идентификатор сервиса, предоставляющего услуги</td>
+        </tr>
+        <tr>
+            <td><code>openstat_source</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>
+                Идентификатор площадки, раздела, страницы, было показано соответствующее рекламное объявление
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7">Атрибуты обращения</td>
+        </tr>
+        <tr>
+            <td><code>attributes</code></td>
+            <td>array</td>
+            <td>
+                <ul>
+                    <li><code>first</code> - Первый качественный</li>
+                    <li><code>through</code> - Сквозной первый качественный</li>
+                    <li><code>primary</code> - Первичное</li>
+                    <li><code>secondary</code> - Вторичное</li>
+                    <li><code>lost</code> - Потерянное</li>
+                    <li><code>target</code> - Целевое</li>
+                    <li><code>off-target</code> - Не целевое</li>
+                    <li><code>quality</code> - Качественное</li>
+                    <li><code>rest</code> - целевые повторные обращения (обращения, совершенные в период повторного обращения, настроенного для сайта в ЛК Novofon).</li>
+                </ul>
+            </td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Атрибуты обращения</td>
+        </tr>
+        <tr>
+            <td colspan="7">Расширенные UTM-метки</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_source</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Расширенная utm_source</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_medium</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Расширенная utm_medium</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_term</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Расширенная utm_term</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_content</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Расширенная utm_content</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_campaign</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Расширенная utm_campaign</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_referrer</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Расширенная utm_referrer</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_expid</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Расширенная utm_expid</td>
+        </tr>
+            <tr>
+    <td colspan="7">Информация об источнике</td>
+    </tr>
+    <tr>
+      <td><code>source_id</code></td>
+      <td>number</td>
+      <td></td>
+      <td>да</td>
+      <td>да</td>
+      <td></td>
+      <td>Идентификатор Источника(детальный).</td>
+    </tr>
+    <tr>
+      <td><code>source_name</code></td>
+      <td>string</td>
+      <td></td>
+      <td>да</td>
+      <td>да</td>
+      <td></td>
+      <td>Источник(детальный). Название источника</td>
+    </tr>
+    <tr>
+      <td><code>source_new</code></td>
+      <td>string</td>
+      <td></td>
+      <td>да</td>
+      <td>да</td>
+      <td></td>
+      <td>Источник(new). Группа источника</td>
+    </tr>
+    <tr>
+      <td><code>channel_new</code></td>
+      <td>string</td>
+      <td></td>
+      <td>да</td>
+      <td>да</td>
+      <td></td>
+      <td>Канал(new). Название канала источника</td>
+    </tr>
+    <tr>
+      <td><code>channel_code</code></td>
+      <td>string</td>
+      <td></td>
+      <td>да</td>
+      <td>да</td>
+      <td></td>
+      <td>Мнемоника канала</td>
+    </tr>
+        <td colspan="7">Параметры из внешних систем</td>
+    </tr>
+        <tr>
+            <td><code>ext_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Уникальный идентификатор звонка в вашей системе.</td>
+        </tr>
+    </tbody>
+
+</table>
+
+<h2 id="_4">Причины окончания сессии звонка</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Мнемоника</th>
+<th align="left">Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">numb_not_exists</td>
+<td align="left">Виртуальный номер не найден</td>
+</tr>
+<tr>
+<td align="left">incorrect_input</td>
+<td align="left">Некорректный ввод</td>
+</tr>
+<tr>
+<td align="left">numb_is_inactive</td>
+<td align="left">Виртуальный номер не активен</td>
+</tr>
+<tr>
+<td align="left">sitephone_is_not_configured</td>
+<td align="left">Сайтфон не настроен</td>
+</tr>
+<tr>
+<td align="left">app_is_inactive</td>
+<td align="left">Клиент деактивирован</td>
+</tr>
+<tr>
+<td align="left">numa_in_black_list</td>
+<td align="left">Вызывающий абонент в чёрном списке</td>
+</tr>
+<tr>
+<td align="left">no_active_scenario</td>
+<td align="left">Не найден активный сценарий</td>
+</tr>
+<tr>
+<td align="left">simple_forwarding_is_not_configured</td>
+<td align="left">Аналитика: простая переадресация не настроена</td>
+</tr>
+<tr>
+<td align="left">site_not_exists</td>
+<td align="left">Сайт не найден</td>
+</tr>
+<tr>
+<td align="left">call_generator_is_not_configured</td>
+<td align="left">Лидогенератор не настроен</td>
+</tr>
+<tr>
+<td align="left">add_cdr_timeout</td>
+<td align="left">Не определена</td>
+</tr>
+<tr>
+<td align="left">success_finish</td>
+<td align="left">Не определена</td>
+</tr>
+<tr>
+<td align="left">api_permission_denied</td>
+<td align="left">Доступ к Call API запрещён</td>
+</tr>
+<tr>
+<td align="left">api_ip_now_allowed</td>
+<td align="left">IP-адрес не в списке разрешённых</td>
+</tr>
+<tr>
+<td align="left">component_is_inactive</td>
+<td align="left">Компонент не активен</td>
+</tr>
+<tr>
+<td align="left">employee_not_exists</td>
+<td align="left">Сотрудник не найден</td>
+</tr>
+<tr>
+<td align="left">not_enough_money</td>
+<td align="left">Недостаточно средств</td>
+</tr>
+<tr>
+<td align="left">platform_not_found</td>
+<td align="left">Обратитесь в службу технической поддержки</td>
+</tr>
+<tr>
+<td align="left">internal_error</td>
+<td align="left">Обратитесь в службу технической поддержки</td>
+</tr>
+<tr>
+<td align="left">incorrect_config</td>
+<td align="left">Недопустимая конфигурация</td>
+</tr>
+<tr>
+<td align="left">communication_unavailable</td>
+<td align="left">Недоступный тип связи</td>
+</tr>
+<tr>
+<td align="left">subscriber_disconnects</td>
+<td align="left">Абонент разорвал соединение</td>
+</tr>
+<tr>
+<td align="left">no_operation</td>
+<td align="left">Нет операции для обработки</td>
+</tr>
+<tr>
+<td align="left">scenario_not_found</td>
+<td align="left">Сценарий не найден</td>
+</tr>
+<tr>
+<td align="left">transfer_disconnects</td>
+<td align="left">Отключение сотрудника при трансфере</td>
+</tr>
+<tr>
+<td align="left">scenario_disconnects</td>
+<td align="left">Отключение сотрудника при запуске сценария</td>
+</tr>
+<tr>
+<td align="left">fax_session_done</td>
+<td align="left">Факс принят</td>
+</tr>
+<tr>
+<td align="left">no_resources</td>
+<td align="left">Лимит клиента исчерпан</td>
+</tr>
+<tr>
+<td align="left">another_operator_answer</td>
+<td align="left">Дозвонились до другого сотрудника</td>
+</tr>
+<tr>
+<td align="left">subscriber_busy</td>
+<td align="left">Абонент занят</td>
+</tr>
+<tr>
+<td align="left">subscriber_not_responsible</td>
+<td align="left">Абонент не отвечает</td>
+</tr>
+<tr>
+<td align="left">subscriber_number_problems</td>
+<td align="left">Проблемы с телефонным номером абонента. Обратитесь в службу технической поддержки.</td>
+</tr>
+<tr>
+<td align="left">operator_answer</td>
+<td align="left">Дозвонились до сотрудника</td>
+</tr>
+<tr>
+<td align="left">locked_numb</td>
+<td align="left">Звонки на этот номер запрещены настройками безопасности</td>
+</tr>
+<tr>
+<td align="left">call_not_allowed_on_tp</td>
+<td align="left">Звонок запрещен согласно тарифному плану</td>
+</tr>
+<tr>
+<td align="left">account_not_found</td>
+<td align="left">Не найден лицевой счёт</td>
+</tr>
+<tr>
+<td align="left">contract_not_found</td>
+<td align="left">Не найден договор</td>
+</tr>
+<tr>
+<td align="left">operator_busy</td>
+<td align="left">Сотрудник занят</td>
+</tr>
+<tr>
+<td align="left">operator_not_responsible</td>
+<td align="left">Сотрудник не отвечает</td>
+</tr>
+<tr>
+<td align="left">operator_disconnects</td>
+<td align="left">Сотрудник разорвал соединение</td>
+</tr>
+<tr>
+<td align="left">operator_number_problems</td>
+<td align="left">Проблемы с телефонным номером сотрудника. Обратитесь в службу технической поддержки.</td>
+</tr>
+<tr>
+<td align="left">timeout</td>
+<td align="left">Время дозвона истекло</td>
+</tr>
+<tr>
+<td align="left">operator_channels_busy</td>
+<td align="left">Закончились доступные линии на номере переадресации</td>
+</tr>
+<tr>
+<td align="left">locked_phone</td>
+<td align="left">Проблемы с сетью</td>
+</tr>
+<tr>
+<td align="left">max_in_call_reached</td>
+<td align="left">Достигнут лимит линий для входящих звонков</td>
+</tr>
+<tr>
+<td align="left">max_out_call_reached</td>
+<td align="left">Достигнут лимит линий для исходящих звонков</td>
+</tr>
+<tr>
+<td align="left">employee_busy</td>
+<td align="left">Сотрудник разговаривает в другом звонке</td>
+</tr>
+<tr>
+<td align="left">employee_busy_after_call</td>
+<td align="left">Сотрудник занят после звонка</td>
+</tr>
+<tr>
+<td align="left">phone_group_inactive_by_schedule</td>
+<td align="left">Группа номеров неактивна согласно расписанию</td>
+</tr>
+<tr>
+<td align="left">sip_offline</td>
+<td align="left">SIP-линия не зарегистрирована</td>
+</tr>
+<tr>
+<td align="left">employee_inactive</td>
+<td align="left">Сотрудник неактивен</td>
+</tr>
+<tr>
+<td align="left">employee_inactive_by_schedule</td>
+<td align="left">Сотрудник неактивен согласно расписанию</td>
+</tr>
+<tr>
+<td align="left">employee_phone_inactive</td>
+<td align="left">Номер сотрудника неактивен</td>
+</tr>
+<tr>
+<td align="left">employee_phone_inactive_by_schedule</td>
+<td align="left">Номер сотрудника неактивен согласно расписанию</td>
+</tr>
+<tr>
+<td align="left">action_interval_exceeded</td>
+<td align="left">Превышен интервал, указанный на операции</td>
+</tr>
+<tr>
+<td align="left">group_phone_inactive</td>
+<td align="left">Номер в группе недоступен</td>
+</tr>
+<tr>
+<td align="left">no_operator_confirmation</td>
+<td align="left">Сотрудник не подтвердил вызов</td>
+</tr>
+<tr>
+<td align="left">max_transition_count_exceeded</td>
+<td align="left">Достигнуто максимальное количество переходов по операциям сценария</td>
+</tr>
+<tr>
+<td align="left">disconnect_before_call_processing</td>
+<td align="left">Разъединение до обработки вызова</td>
+</tr>
+<tr>
+<td align="left">no_success_subscriber_call</td>
+<td align="left">Не дозвонились до абонента</td>
+</tr>
+<tr>
+<td align="left">no_success_operator_call</td>
+<td align="left">Не дозвонились до сотрудника</td>
+</tr>
+<tr>
+<td align="left">group_inactive_by_schedule</td>
+<td align="left">Группа сотрудников неактивна согласно расписанию</td>
+</tr>
+<tr>
+<td align="left">net_lock</td>
+<td align="left">Сеть оператора заблокирована</td>
+</tr>
+<tr>
+<td align="left">fmc_is_disabled</td>
+<td align="left">Услуга FMC отключена</td>
+</tr>
+<tr>
+<td align="left">fmc_is_locked</td>
+<td align="left">FMC-линия заблокирована</td>
+</tr>
+<tr>
+<td align="left">processing_method_not_found</td>
+<td align="left">Способ обработки не найден</td>
+</tr>
+<tr>
+<td align="left">employee_without_phones</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">group_without_phones</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">no_operator_cdr_found</td>
+<td align="left">Вызовы сотрудникам не найдены</td>
+</tr>
+<tr>
+<td align="left">in_call_not_allowed</td>
+<td align="left">Прием входящих звонков запрещен</td>
+</tr>
+<tr>
+<td align="left">phone_protocol_not_allowed_by_status</td>
+<td align="left">Звонки с данного типа номера запрещены статусом</td>
+</tr>
+<tr>
+<td align="left">employee_status_break</td>
+<td align="left">Сотрудник в статусе "Перерыв"</td>
+</tr>
+<tr>
+<td align="left">employee_status_do_not_disturb</td>
+<td align="left">Сотрудник в статусе "Не беспокоить"</td>
+</tr>
+<tr>
+<td align="left">employee_status_not_at_workplace</td>
+<td align="left">Сотрудник в статусе "Нет на месте"</td>
+</tr>
+<tr>
+<td align="left">employee_status_not_at_work</td>
+<td align="left">Сотрудник в статусе "Нет на работе"</td>
+</tr>
+<tr>
+<td align="left">sip_trunk_is_locked</td>
+<td align="left">SIP-транк заблокирован</td>
+</tr>
+<tr>
+<td align="left">numa_in_spam_list</td>
+<td align="left">Спам-звонок</td>
+</tr>
+<tr>
+<td align="left">numa_dnd_interval</td>
+<td align="left">Звонили недавно</td>
+</tr>
+<tr>
+<td align="left">limit_exceeded</td>
+<td align="left">Достигнут финансовый лимит</td>
+</tr>
+<tr>
+<td align="left">no_money</td>
+<td align="left">Недостаточно средств</td>
+</tr>
+<tr>
+<td align="left">out_call_not_allowed</td>
+<td align="left">Исходящие звонки запрещены</td>
+</tr>
+<tr>
+<td align="left">out_call_not_allowed_by_status</td>
+<td align="left">Исходящие звонки запрещены статусом</td>
+</tr>
+<tr>
+<td align="left">external_call_not_allowed</td>
+<td align="left">Внешние звонки запрещены</td>
+</tr>
+<tr>
+<td align="left">external_call_not_allowed_by_status</td>
+<td align="left">Внешние звонки запрещены статусом</td>
+</tr>
+<tr>
+<td align="left">internal_call_not_allowed</td>
+<td align="left">Внутренние звонки запрещены</td>
+</tr>
+<tr>
+<td align="left">internal_call_not_allowed_by_status</td>
+<td align="left">Внутренние звонки запрещены статусом</td>
+</tr>
+<tr>
+<td align="left">call_enqueued</td>
+<td align="left">Вызов поставлен в очередь</td>
+</tr>
+<tr>
+<td align="left">employee_status_auto_out_call</td>
+<td align="left">Сотрудник в статусе "Исходящий обзвон"</td>
+</tr>
+<tr>
+<td align="left">employee_status_available</td>
+<td align="left">Сотрудник в статусе "Доступен"</td>
+</tr>
+<tr>
+<td align="left">too_many_identical_incoming_calls</td>
+<td align="left">Слишком много одинаковых входящих звонков</td>
+</tr>
+<tr>
+<td align="left">employee_auto_status_do_not_disturb</td>
+<td align="left">Сотрудник в автоматическом статусе "Не беспокоить"</td>
+</tr>
+<tr>
+<td align="left">auto_out_calls_not_allowed_by_status</td>
+<td align="left">Исходящий обзвон запрещен статусом</td>
+</tr>
+</tbody>
+</table>
+<h3 id="json">JSON структура запроса</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;,
+  &quot;id&quot;:&quot;number&quot;,
+  &quot;method&quot;:&quot;get.calls_report&quot;,
+  &quot;params&quot;:{
+    &quot;access_token&quot;:&quot;string&quot;,
+    &quot;user_id&quot;:&quot;number&quot;,
+    &quot;offset&quot;:&quot;number&quot;,
+    &quot;limit&quot;:&quot;number&quot;,
+    &quot;date_from&quot;:&quot;string&quot;,
+    &quot;date_till&quot;:&quot;string&quot;,
+    &quot;filter&quot;:{
+
+    },
+    &quot;sort&quot;:[
+      {
+        &quot;field&quot;:&quot;string&quot;,
+        &quot;order&quot;:&quot;string&quot;
+      }
+    ],
+    &quot;fields&quot;:[
+      &quot;string&quot;
+    ]
+  }
+}
+</code></pre>
+<h3 id="json_1">JSON структура ответа</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;result&quot;: {
+    &quot;metadata&quot;: {
+
+    },
+    &quot;data&quot;: [
+      {
+        &quot;id&quot;: &quot;number&quot;,
+        &quot;start_time&quot;: &quot;iso8601&quot;,
+        &quot;finish_time&quot;: &quot;iso8601&quot;,
+        &quot;virtual_phone_number&quot;: &quot;string&quot;,
+        &quot;is_transfer&quot;: &quot;boolean&quot;,
+        &quot;finish_reason&quot;: &quot;enum&quot;,
+        &quot;direction&quot;: &quot;enum&quot;,
+        &quot;source&quot;: &quot;enum&quot;,
+        &quot;communication_number&quot;: &quot;number&quot;,
+        &quot;communication_page_url&quot;: &quot;string&quot;,
+        &quot;communication_id&quot;: &quot;number&quot;,
+        &quot;communication_type&quot;: &quot;enum&quot;,
+        &quot;is_lost&quot;: &quot;boolean&quot;,
+        &quot;cpn_region_id&quot;: &quot;number&quot;,
+        &quot;cpn_region_name&quot;: &quot;string&quot;,
+        &quot;wait_duration&quot;: &quot;number&quot;,
+        &quot;total_wait_duration&quot;: &quot;number&quot;,
+        &quot;lost_call_processing_duration&quot; :&quot;number&quot;,
+        &quot;talk_duration&quot;: &quot;number&quot;,
+        &quot;clean_talk_duration&quot;: &quot;number&quot;,
+        &quot;total_duration&quot;: &quot;number&quot;,
+        &quot;postprocess_duration&quot;: &quot;number&quot;,
+        &quot;ua_client_id&quot;: &quot;string&quot;,
+        &quot;ym_client_id&quot;: &quot;string&quot;,
+        &quot;sale_date&quot;: &quot;iso8601&quot;,
+        &quot;sale_cost&quot;: &quot;number&quot;,
+        &quot;search_query&quot;: &quot;string&quot;,
+        &quot;search_engine&quot;: &quot;string&quot;,
+        &quot;referrer_domain&quot;: &quot;string&quot;,
+        &quot;referrer&quot;: &quot;string&quot;,
+        &quot;entrance_page&quot;: &quot;string&quot;,
+        &quot;gclid&quot;: &quot;string&quot;,
+        &quot;yclid&quot;: &quot;string&quot;,
+        &quot;ymclid&quot;: &quot;string&quot;,
+        &quot;ef_id&quot;: &quot;string&quot;,
+        &quot;channel&quot;: &quot;enum&quot;,
+        &quot;site_id&quot;: &quot;number&quot;,
+        &quot;site_domain_name&quot;: &quot;string&quot;,
+        &quot;campaign_id&quot;: &quot;number&quot;,
+        &quot;campaign_name&quot;: &quot;string&quot;,
+        &quot;auto_call_campaign_name&quot;: &quot;string&quot;,
+        &quot;visit_other_campaign&quot;: &quot;boolean&quot;,
+        &quot;visitor_id&quot;: &quot;number&quot;,
+        &quot;person_id&quot;: &quot;number&quot;,
+        &quot;visitor_type&quot;: &quot;enum&quot;,
+        &quot;visitor_session_id&quot;: &quot;number&quot;,
+        &quot;visits_count&quot;: &quot;number&quot;,
+        &quot;visitor_first_campaign_id&quot;: &quot;number&quot;,
+        &quot;visitor_first_campaign_name&quot;: &quot;string&quot;,
+        &quot;visitor_city&quot;: &quot;string&quot;,
+        &quot;visitor_region&quot;: &quot;string&quot;,
+        &quot;visitor_country&quot;: &quot;string&quot;,
+        &quot;visitor_device&quot;: &quot;enum&quot;,
+        &quot;last_answered_employee_id&quot;: &quot;number&quot;,
+        &quot;last_answered_employee_full_name&quot;: &quot;string&quot;,
+        &quot;last_answered_employee_rating&quot;: &quot;number&quot;,
+        &quot;first_answered_employee_id&quot;: &quot;number&quot;,
+        &quot;first_answered_employee_full_name&quot;: &quot;string&quot;,
+        &quot;scenario_id&quot;: &quot;number&quot;,
+        &quot;scenario_name&quot;: &quot;string&quot;,
+        &quot;call_api_external_id&quot;: &quot;string&quot;,
+        &quot;call_api_request_id&quot;: &quot;number&quot;,
+        &quot;contact_phone_number&quot;: &quot;string&quot;,
+        &quot;contact_full_name&quot;: &quot;string&quot;,
+        &quot;contact_id&quot;: &quot;number&quot;,
+        &quot;utm_source&quot;: &quot;string&quot;,
+        &quot;utm_medium&quot;: &quot;string&quot;,
+        &quot;utm_term&quot;: &quot;string&quot;,
+        &quot;utm_content&quot;: &quot;string&quot;,
+        &quot;utm_campaign&quot;: &quot;string&quot;,
+        &quot;openstat_ad&quot;: &quot;string&quot;,
+        &quot;openstat_campaign&quot;: &quot;string&quot;,
+        &quot;openstat_service&quot;: &quot;string&quot;,
+        &quot;openstat_source&quot;: &quot;string&quot;,
+        &quot;eq_utm_source&quot;: &quot;string&quot;,
+        &quot;eq_utm_medium&quot;: &quot;string&quot;,
+        &quot;eq_utm_term&quot;: &quot;string&quot;,
+        &quot;eq_utm_content&quot;: &quot;string&quot;,
+        &quot;eq_utm_campaign&quot;: &quot;string&quot;,
+        &quot;eq_utm_referrer&quot;: &quot;string&quot;,
+        &quot;eq_utm_expid&quot;: &quot;string&quot;,
+        &quot;attributes&quot;: [
+
+        ],
+        &quot;call_records&quot;: [
+
+        ],
+        &quot;voice_mail_records&quot;: [
+
+        ],
+        &quot;recognized_text&quot;: [
+          {
+            &quot;id&quot;: &quot;number&quot;,
+            &quot;phrase&quot;: &quot;string&quot;,
+            &quot;start_time&quot;: &quot;iso8601&quot;,
+            &quot;is_operator&quot;: &quot;boolean&quot;,
+            &quot;edited_phrase&quot;: &quot;string&quot;
+          }
+        ],
+        &quot;tags&quot;: [
+          {
+            &quot;tag_id&quot;: &quot;number&quot;,
+            &quot;tag_name&quot;: &quot;string&quot;,
+            &quot;tag_type&quot;: &quot;enum&quot;,
+            &quot;tag_change_time&quot;: &quot;iso8601&quot;,
+            &quot;tag_user_id&quot;: &quot;number&quot;,
+            &quot;tag_user_login&quot;: &quot;string&quot;,
+            &quot;tag_employee_id&quot;: &quot;number&quot;,
+            &quot;tag_employee_full_name&quot;: &quot;string&quot;
+          }
+        ],
+        &quot;visitor_custom_properties&quot;: [
+          {
+            &quot;property_name&quot;: &quot;string&quot;,
+            &quot;property_value&quot;: &quot;string&quot;
+          }
+        ],
+        &quot;segments&quot;: [
+          {
+            &quot;segment_id&quot;: &quot;number&quot;,
+            &quot;segment_name&quot;: &quot;string&quot;
+          }
+        ],
+        &quot;employees&quot;: [
+          {
+            &quot;employee_id&quot;: &quot;number&quot;,
+            &quot;employee_full_name&quot;: &quot;string&quot;,
+            &quot;is_answered&quot;: &quot;boolean&quot;
+          }
+        ],
+        &quot;operator_phone_number&quot;: &quot;string&quot;,
+        &quot;scenario_operations&quot;: [
+          {
+            &quot;name&quot;: &quot;string&quot;,
+            &quot;id&quot;: &quot;number&quot;
+          }
+        ],
+        &quot;source_id&quot;: &quot;number&quot;,
+        &quot;source_name&quot;: &quot;string&quot;,
+        &quot;source_new&quot;: &quot;string&quot;,
+        &quot;channel_new&quot;: &quot;string&quot;,
+        &quot;channel_code&quot;: &quot;string&quot;,
+                &quot;ext_id&quot;: &quot;string&quot;
+      }
+    ]
+  }
+}
+</code></pre>
+<h3 id="_5">Список возвращаемых ошибок</h3>
+<p>Смотрим раздел <a href="../..#_getErrors">"Список ошибок для методов с глаголом get"</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  </body>
+</html>

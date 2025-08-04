@@ -1,0 +1,1176 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Call API</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#call-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Call API" class="md-header__button md-logo" aria-label="Call API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Call API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Call API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Call API" class="md-nav__button md-logo" aria-label="Call API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Call API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Call API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        Call API
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Знакомство
+  </a>
+  
+    <nav class="md-nav" aria-label="Знакомство">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Введение
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Соглашения
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip-" class="md-nav__link">
+    Добавить IP-адрес в список разрешенных
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-api_1" class="md-nav__link">
+    Пользователи Call API
+  </a>
+  
+    <nav class="md-nav" aria-label="Пользователи Call API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Доступ по логину и паролю
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Доступ по ключу
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Управление безопасностью звонка
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Компоненты
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    Формат возвращаемых данных
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-api" class="md-nav__link">
+    Базовый URL для доступа к API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    Версионность
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    Мета-параметры
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    Общее
+  </a>
+  
+    <nav class="md-nav" aria-label="Общее">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    Общие поля для всех методов
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    Диаграмма состояний звонка
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    Аутентификация
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    Группа методов создания звонков
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    Группа методов управления вызовами
+  </a>
+  
+    <nav class="md-nav" aria-label="Группа методов управления вызовами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    Группы кодов ошибок
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    Список ошибок общих для всех методов
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Знакомство
+  </a>
+  
+    <nav class="md-nav" aria-label="Знакомство">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Введение
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Соглашения
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip-" class="md-nav__link">
+    Добавить IP-адрес в список разрешенных
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-api_1" class="md-nav__link">
+    Пользователи Call API
+  </a>
+  
+    <nav class="md-nav" aria-label="Пользователи Call API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Доступ по логину и паролю
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Доступ по ключу
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Управление безопасностью звонка
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Компоненты
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    Формат возвращаемых данных
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-api" class="md-nav__link">
+    Базовый URL для доступа к API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    Версионность
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    Мета-параметры
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    Общее
+  </a>
+  
+    <nav class="md-nav" aria-label="Общее">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    Общие поля для всех методов
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    Диаграмма состояний звонка
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    Аутентификация
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    Группа методов создания звонков
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    Группа методов управления вызовами
+  </a>
+  
+    <nav class="md-nav" aria-label="Группа методов управления вызовами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    Группы кодов ошибок
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    Список ошибок общих для всех методов
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="call-api">Call API</h1>
+<h2 id="_1">Знакомство</h2>
+<h3 id="_2">Введение</h3>
+<p>Настоящий документ описывает Call API, которое позволяет совершать звонки и управлять ими.
+Настоящий документ описывает Call API, которое позволяет совершать звонки и управлять ими.</p>
+<blockquote>
+<p>Управлять можно так же звонками, которые поступили на виртуальную АТС. Для этого необходимо получить уникальный идентификатор сессии звонка. Его можно получить с помощью сервера уведомлений, DATA API.</p>
+</blockquote>
+<p>API реализован на основе спецификации JSON-RPC 2.0 без поддержки групповых операций.</p>
+<p>При запросах к API в качестве транспортного протокола используется HTTP/1.1 с защитой соединения с помощью SSL/TLS, при этом соблюдая следующие требования:</p>
+<ul>
+<li>Заголовок <code>Content-Type</code> должен быть <code>application/json; charset=UTF-8</code></li>
+<li>Заголовок <code>Content-Length</code> должен содержать корректную длину сообщения, следуя спецификации HTTP/1.1</li>
+</ul>
+<h3 id="_3">Соглашения</h3>
+<p>Приняты следующие соглашения:</p>
+<ul>
+<li>Пустые поля всегда возвращаются в ответе со значением <code>null</code>. В случае массива возвращается пустой массив, в случае объекта возвращается пустой объект;</li>
+<li>Все поля связанные с датой и временем передаются согласно ISO 8601 в формате <code>YYYY-MM-DDT hh:mm:ssZ</code>;</li>
+<li>Запросы к API выполняются всегда с помощью метода POST;</li>
+<li>Все параметры в запросах/ответах, а также в структурах данных в формате JSON и название методов именуются в стиле Snake Case - разделение слов через нижнее подчёркивание;</li>
+<li>Данные возвращаются только в JSON формате согласно спецификации RFC 7159;</li>
+<li>Кодировка данных UTF-8;</li>
+</ul>
+<p><a name="whitelist"></a></p>
+<h3 id="ip-">Добавить IP-адрес в список разрешенных</h3>
+<p>По умолчанию доступ к API запрещен всем, чтобы можно было делать запросы необходимо IP-адрес хоста с которого делается запрос добавить в белый список.
+Это можно сделать через личный кабинет администратора в разделе "Настройки -&gt; Правила и настройки безопасности" вкладка "API".</p>
+<h3 id="call-api_1">Пользователи Call API</h3>
+<h4 id="_4">Доступ по логину и паролю</h4>
+<p>Используется аутентификация по логину и паролю пользователя, в ответе будет получен ключ доступа к Call API</p>
+<blockquote>
+<p>Время жизни сессии по умолчанию 1 час.</p>
+</blockquote>
+<h4 id="_5">Доступ по ключу</h4>
+<p>В настройках пользователя Администратор есть возможность включить доступ по ключу. Для этого в разделе Телефония - Пользователи АТС открыть настройки пользователя "Администратор". В настройках пользователя в вкладке API поставьте галку "Использовать ключ API". </p>
+<blockquote>
+<p>Ключи могут действовать до определенной даты или быть бессрочными, в зависимости от ваших настроек.</p>
+</blockquote>
+<h3 id="_6">Управление безопасностью звонка</h3>
+<p>Управлять безопасностю звонков (мобильные, междугородние, международные направления) можно в личном кабинете на странице "Настройки" -&gt; "Правила и настройки безопасности" -&gt; "API".</p>
+<blockquote>
+<p>По умолчанию запрещено международное направление, остальные направления разрешены.</p>
+</blockquote>
+<p>Разрешения для направлений звонка разбиты по компонентам Call API (см. Компоненты)</p>
+<h3 id="_7">Компоненты</h3>
+<table>
+<thead>
+<tr>
+<th>Название для клиента</th>
+<th>Список методов</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Call API Базовый набор</td>
+<td>start.employee_call, start.vnumber_call, start.simple_call, login.user, logout.user, release.call</td>
+<td>Базовый пакет Call API</td>
+</tr>
+<tr>
+<td>Call API Управление вызовами</td>
+<td>hold.call, unhold.call, make.call, disconnect.leg, tag.call, record.call, add.coach, list.calls, send.dtmf, block.contact, restore.talk, transfer.talk, list.talk_options, call.talk_option</td>
+<td>Пакет позволяет управлять звонками.</td>
+</tr>
+<tr>
+<td>Call API Информационный вызов</td>
+<td>start.informer_call</td>
+<td>Пакет, который позволяет обзванивать клиентов и проигрывать им TTS или какой-то предустановленный файл. После окончания информационного сообщения вызов завершается</td>
+</tr>
+<tr>
+<td>Call API Вызов сценария</td>
+<td>start.scenario_call</td>
+<td>Пакет, который позволяет совершать вызовы клиенту с использованием одного виртуального номера и набора сценариев.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">Формат возвращаемых данных</h3>
+<table>
+<thead>
+<tr>
+<th>Формат</th>
+<th>MIME Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JSON</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>По умолчанию используется формат JSON. Заголовок Accept игнорируется</p>
+</blockquote>
+<h3 id="url-api">Базовый URL для доступа к API</h3>
+<p>Базовый URI для доступа к API:</p>
+<pre><code>https://callapi-jsonrpc.novofon.ru/&lt;version&gt;
+</code></pre>
+<p>где</p>
+<p><code>&lt;version&gt;</code> - версия API (см. раздел Версионность)</p>
+<h3 id="_9">Версионность</h3>
+<p>Call API поддерживает версионность. Версия указывается в базовом URL как vX.Y, где X - номер мажорной версии, Y - номер минорной версии</p>
+<blockquote>
+<p>Версия должна указываться через точку, к примеру 4.0</p>
+<p>Если была выпущена новая версия, то старая считается устаревшей и соответственно при обращении к старой версии API в мета-параметрах (см. раздел Мета-параметры) будет возвращаться параметр <code>current_version_depricated</code> со значением <code>true</code>. Это говорит о том, что в ближайшие пару месяцев старая версия может стать недоступной.</p>
+</blockquote>
+<p>Пример:</p>
+<pre><code>https://callapi-jsonrpc.novofon.ru/v4.0
+</code></pre>
+<blockquote>
+<p>Максимальное количество поддерживаемых версий - 2
+Период поддержки устаревшей версии 2 месяца</p>
+</blockquote>
+<h3 id="-">Мета-параметры</h3>
+<blockquote>
+<p>Возвращаются в ответ на вызов метода. Присутствуют как в ошибочном, так и в успешном ответе</p>
+<p>Параметр <code>api_version</code> возвращается только для версий которые <code>deprecated</code>.</p>
+</blockquote>
+<p>Описание параметров</p>
+<table>
+<thead>
+<tr>
+<th>Название параметра</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>day_limit</code></td>
+<td>Текущие лимит баллов в день</td>
+</tr>
+<tr>
+<td><code>day_remaining</code></td>
+<td>Какое количество баллов осталось до достижения дневного лимита</td>
+</tr>
+<tr>
+<td><code>day_reset</code></td>
+<td>Время в секундах через которое дневной лимит будет сброшен</td>
+</tr>
+<tr>
+<td><code>minute_limit</code></td>
+<td>Текущие лимит баллов за минуту</td>
+</tr>
+<tr>
+<td><code>minute_remaining</code></td>
+<td>Какое количество баллов осталось до достижения минутного лимита</td>
+</tr>
+<tr>
+<td><code>minute_reset</code></td>
+<td>Время в секундах через которое минутный лимит будет сброшен</td>
+</tr>
+<tr>
+<td><code>current_version_depricated</code></td>
+<td>Признак, говорящий, что в ближайшие пару месяцев старая версия может стать недоступной.</td>
+</tr>
+<tr>
+<td><code>current_version</code></td>
+<td>Вызванная версия</td>
+</tr>
+<tr>
+<td><code>latest_version</code></td>
+<td>Последняя доступная версия</td>
+</tr>
+</tbody>
+</table>
+<p>JSON структура</p>
+<pre><code class="language-json">&quot;metadata&quot;: {
+  &quot;api_version&quot;: {
+    &quot;current_version_depricated&quot;: &quot;boolean&quot;,
+    &quot;current_version&quot;: &quot;string&quot;,
+    &quot;latest_version&quot;: &quot;string&quot;
+  },
+  &quot;limits&quot;: {
+    &quot;day_limit&quot;: &quot;number&quot;,
+    &quot;day_remaining&quot;: &quot;number&quot;,
+    &quot;day_reset&quot;: &quot;number&quot;,
+    &quot;minute_limit&quot;: &quot;number&quot;,
+    &quot;minute_remaining&quot;: &quot;number&quot;,
+    &quot;minute_reset&quot;: &quot;number&quot;
+  }
+}
+</code></pre>
+<h2 id="_10">Общее</h2>
+<h3 id="_11">Общие поля для всех методов</h3>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Тип</th>
+<th>Обязательный</th>
+<th>Допустимые значения</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>string или number</td>
+<td>да</td>
+<td></td>
+<td>Уникальный идентификатор запроса к API. <blockquote>Не передается в уведомлениях. Фигурирует только в Статистика и отчеты параметр <code>Идентификатор запроса</code></blockquote></td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>да</td>
+<td></td>
+<td>Вызываемый метод (см. Список методов)</td>
+</tr>
+<tr>
+<td>jsonrpc</td>
+<td>string</td>
+<td>да</td>
+<td>2.0</td>
+<td>Номер спецификации JSON-RPC</td>
+</tr>
+<tr>
+<td>params</td>
+<td>object</td>
+<td>да</td>
+<td></td>
+<td>Содержит тело запроса к API. В зависимости от вызываемого метода тело запроса меняется.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="diagram"></a></p>
+<h3 id="_12">Диаграмма состояний звонка</h3>
+<p><a class="glightbox" href="images/state-diagram-call-copy.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="images/state-diagram-call-copy.jpg" /></a></p>
+<h2 id="_13">Аутентификация</h2>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="authentication/login_user/">"login.user"</a></td>
+<td>Вход</td>
+</tr>
+<tr>
+<td><a href="authentication/logout_user/">"logout.user"</a></td>
+<td>Выход и удаление ключа сессии аутентификации</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_14">Группа методов создания звонков</h2>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="create_call/start_employee_call/">"start_employee_call"</a></td>
+<td>Метод создает прямой звонок абонента с сотрудником без использования сценария.</td>
+</tr>
+<tr>
+<td><a href="create_call/start_scenario_call/">"start.scenario_call"</a></td>
+<td>Метод создает звонок согласно настроенному сценарию. Для использования метода достаточно одного виртуального номера и N сценариев.</td>
+</tr>
+<tr>
+<td><a href="create_call/start_vnumber_call/">"start.vnumber_call"</a></td>
+<td>Вызов на виртуальный номер.</td>
+</tr>
+<tr>
+<td><a href="create_call/start_informer_call/">"start.informer_call"</a></td>
+<td>Информационный вызов с возможностью проиграть абоненту файл или текстовое сообщение. После окончания проигрывания сообщения вызов завершается автоматически.</td>
+</tr>
+<tr>
+<td><a href="create_call/start_simple_call/">"start.simple_call"</a></td>
+<td>Звонок на любые номера кроме собственных виртуальных. Это не звонок сотрудника на любой номер.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_15">Группа методов управления вызовами</h2>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="manage_call/make_call/">"make.call"</a></td>
+<td>Создать звонок для трансфера или консультации.</td>
+</tr>
+<tr>
+<td><a href="manage_call/transfer_talk/">"transfer.talk"</a></td>
+<td>Метод позволяет произвести трансфер звонка другому сотруднику или на внешний номер (см. раздел "Диаграмма состояний звонка").</td>
+</tr>
+<tr>
+<td><a href="manage_call/restore_talk/">"restore.talk"</a></td>
+<td>Метод позволяет вернуться в разговор с абонентом после получения консультации от другого сотрудника (см. раздел "Диаграмма состояний звонка").</td>
+</tr>
+<tr>
+<td><a href="manage_call/hold_call/">"hold.call"</a></td>
+<td>Постановка вызова на удержание.</td>
+</tr>
+<tr>
+<td><a href="manage_call/unhold_call/">"unhold.call"</a></td>
+<td>Снятие вызова с удержания.</td>
+</tr>
+<tr>
+<td><a href="manage_call/tag_call/">"tag.call"</a></td>
+<td>Простановка тега для активного вызова.</td>
+</tr>
+<tr>
+<td><a href="manage_call/disconnect_leg/">"disconnect.leg"</a></td>
+<td>Метод позволяет разъединять отдельных участников разговора. Уникальный идентификатор каждого участника разговора можно получить используя метод list.calls или сервер уведомлений.</td>
+</tr>
+<tr>
+<td><a href="manage_call/add_coach/">"add.coach"</a></td>
+<td>Подключение тренера к разговору.</td>
+</tr>
+<tr>
+<td><a href="manage_call/record_call/">"record.call"</a></td>
+<td>Управление записью разговора. Отключить запись разговора, настроенную через личный кабинет невозможно.</td>
+</tr>
+<tr>
+<td><a href="manage_call/block_contact/">"block.contact"</a></td>
+<td>Занести абонента в чёрный список во время разговора.</td>
+</tr>
+<tr>
+<td><a href="manage_call/call_talk_option/">"call.talk_option"</a></td>
+<td>Вызов опции разговора, которая настроена в Личном кабинете виртуальной АТС.</td>
+</tr>
+<tr>
+<td><a href="manage_call/send_dtmf/">"send.dtmf"</a></td>
+<td>Отправка DTMF сотрудником. Метод Используется в случае, если на стороне клиента есть IVR и требуется выбрать в нём пункт меню.</td>
+</tr>
+<tr>
+<td><a href="manage_call/list_talk_options/">"list.talk_options"</a></td>
+<td>Получение списка опций разговора настроенных в Личном кабинете виртуальной АТС.</td>
+</tr>
+<tr>
+<td><a href="manage_call/list_calls/">"list.calls"</a></td>
+<td>Получить список активных вызовов и их участников.</td>
+</tr>
+<tr>
+<td><a href="manage_call/release_call/">"release.call"</a></td>
+<td>Завершение звонка.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_16">Группы кодов ошибок</h3>
+<table>
+<thead>
+<tr>
+<th>Код ошибки</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-32700</td>
+<td>Ошибки связанные с валидацией JSON</td>
+</tr>
+<tr>
+<td>-32600</td>
+<td>Ошибки связанные с валидацией параметров запроса - <code>id</code>, <code>jsonrpc</code></td>
+</tr>
+<tr>
+<td>-32601</td>
+<td>Ошибки связанные с методом</td>
+</tr>
+<tr>
+<td>-32602</td>
+<td>Ошибки связанные с валидацией параметров в вызываемом методе</td>
+</tr>
+<tr>
+<td>-32603</td>
+<td>Внутренние ошибки JSON RPC сервера <blockquote>В случае возникновения ошибки, необходимо обратиться в службу технической поддержки, передав запрос, который вызвал ошибку и время запроса.</blockquote></td>
+</tr>
+<tr>
+<td>-32001</td>
+<td>Ошибки аутентификации и ошибки с ключами</td>
+</tr>
+<tr>
+<td>-32002</td>
+<td>Ошибки связанные с: правила безопасности запрещают звонок по указанному направлению (см. раздел Правила безопасности) и черным списком</td>
+</tr>
+<tr>
+<td>-32003</td>
+<td>Ошибки с правами доступа - ip адрес не в белом списке, нет прав у пользователя</td>
+</tr>
+<tr>
+<td>-32004</td>
+<td>Ошибки связанные с неверной последовательностью вызываемых методов</td>
+</tr>
+<tr>
+<td>-32007</td>
+<td>Ошибки связанные с виртуальным номером</td>
+</tr>
+<tr>
+<td>-32008</td>
+<td>Ошибки связанные с компонентами</td>
+</tr>
+<tr>
+<td>-32009</td>
+<td>Ошибки связанные с аккаунтом <blockquote>В случае возникновения ошибки, необходимо обратиться в службу технической поддержки, передав запрос, который вызвал ошибку и время запроса.</blockquote></td>
+</tr>
+<tr>
+<td>-32029</td>
+<td>Ошибки связанные с лимитами</td>
+</tr>
+<tr>
+<td>-32099</td>
+<td>Ошибки связанные с поддержкой различных частей спецификации JSON RPC 2.0 - Групповые операции, Уведомления</td>
+</tr>
+</tbody>
+</table>
+<p><a name="_errors"></a></p>
+<h3 id="_17">Список ошибок общих для всех методов</h3>
+<table>
+<thead>
+<tr>
+<th>Текст сообщения</th>
+<th>Код</th>
+<th>Мнемоника</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Invalid Request The JSON sent is not a valid Request object</td>
+<td>-32600</td>
+<td><code>invalid_request</code></td>
+<td>Ошибки связанные с валидацией параметров запроса - <code>id</code>, <code>jsonrpc</code></td>
+</tr>
+<tr>
+<td>Access token has been expired</td>
+<td>-32001</td>
+<td><code>access_token_expired</code></td>
+<td>Применяется только к постоянному токену. Если время жизни постоянного токена истекло, то возвращается указанная ошибка</td>
+</tr>
+<tr>
+<td>Access token has been blocked</td>
+<td>-32001</td>
+<td><code>access_token_blocked</code></td>
+<td>Если постоянный токен заблокирован, то возвращается указанная ошибка</td>
+</tr>
+<tr>
+<td>Access token is invalid</td>
+<td>-32001</td>
+<td><code>access_token_invalid</code></td>
+<td>Указанная ошибка возвращается, если постоянный/временный токен не найден или истекло время жизни временного токена</td>
+</tr>
+<tr>
+<td>Limit per {limit_type} has been exceeded. Value of current limit per {limit_type} is {limit_max_value}</td>
+<td>-32029</td>
+<td><code>limit_exceeded</code></td>
+<td>Превышены установленные лимиты согласно тарифного правила (см. раздел Лимиты и ограничения)</td>
+</tr>
+<tr>
+<td>Component {component_name} has been disabled</td>
+<td>-32008</td>
+<td><code>component_disabled</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Your IP {ip} is not whitelisted</td>
+<td>-32003</td>
+<td><code>ip_not_whitelisted</code></td>
+<td>IP адрес, с которого идет запрос не находится в белом списке (см. личный кабинет "Аккаунт" -&gt; "Call API" вкладка "IP адреса"</td>
+</tr>
+<tr>
+<td>Login or password is wrong</td>
+<td>-32001</td>
+<td><code>auth_error</code></td>
+<td>Некорректный логин или пароль</td>
+</tr>
+<tr>
+<td>Your account has been disabled, contact the support service</td>
+<td>-32009</td>
+<td><code>account_inactive</code></td>
+<td>Аккаунт заблокирован <blockquote>В случае возникновения ошибки, необходимо обратиться в службу технической поддержки, передав запрос, который вызвал ошибку и время запроса.</blockquote></td>
+</tr>
+<tr>
+<td>Call session not found</td>
+<td>-32602</td>
+<td><code>call_session_not_found</code></td>
+<td>Если передали ID сессии, который неизвестен</td>
+</tr>
+<tr>
+<td>Internal error, contact the support service</td>
+<td>-32603</td>
+<td><code>internal_error</code></td>
+<td><blockquote>В случае возникновения ошибки, необходимо обратиться в службу технической поддержки, передав запрос, который вызвал ошибку и время запроса.</blockquote></td>
+</tr>
+<tr>
+<td>Data supplied is of wrong type</td>
+<td>-32602</td>
+<td><code>data_type_error</code></td>
+<td>К примеру, если ожидаем <code>string</code> а передали <code>int</code></td>
+</tr>
+<tr>
+<td>The method does not exist / is not available</td>
+<td>-32601</td>
+<td><code>method_not_found</code></td>
+<td>Вызывается метод, который отсутствует в спецификации (см. раздел Список методов)</td>
+</tr>
+<tr>
+<td>Permission denied</td>
+<td>-32003</td>
+<td><code>forbidden</code></td>
+<td>Нет прав на доступ к методу или API, или запрещено выполнять какое-либо действие</td>
+</tr>
+<tr>
+<td>Invalid JSON was received by the server.</td>
+<td>-32700</td>
+<td><code>parse_error</code></td>
+<td>Невалидный JSON</td>
+</tr>
+<tr>
+<td>Batch operations not supported</td>
+<td>-32099</td>
+<td><code>batch_opreations_not_supported</code></td>
+<td>Групповые операции не поддерживаются (см. JSON-RPC 2.0)</td>
+</tr>
+<tr>
+<td>Notifications not supported</td>
+<td>-32099</td>
+<td><code>notifications_not_supported</code></td>
+<td>Уведомления не поддерживаются (см. JSON-RPC 2.0)</td>
+</tr>
+<tr>
+<td>The required parameter has been missed</td>
+<td>-32602</td>
+<td><code>required_parameter_missed</code></td>
+<td>Обязательный параметр не передали</td>
+</tr>
+<tr>
+<td>Invalid parameter value</td>
+<td>-32602</td>
+<td><code>invalid_parameter_value</code></td>
+<td>Возвращается во всех случаях, если было передано некорректное значение параметра или переданное значение не соответствует требуемому формату ввода</td>
+</tr>
+<tr>
+<td>Unexpected method parameter(s)</td>
+<td>-32602</td>
+<td><code>unexpected_parameters</code></td>
+<td>Если в <code>params</code> были переданы параметры, которые не предусмотрены JSON структурой метода</td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="js/init.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

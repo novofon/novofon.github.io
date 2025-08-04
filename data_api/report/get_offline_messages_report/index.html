@@ -1,0 +1,1828 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Получение информации по оффлайн заявкам - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DATA API" class="md-header__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DATA API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Получение информации по оффлайн заявкам
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Общая информация
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/" class="md-nav__link">
+        Права и компоненты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account/get_account/" class="md-nav__link">
+        Аккаунт
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vn/" class="md-nav__link">
+        Виртуальные номера
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sip/" class="md-nav__link">
+        SIP-линии
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scenario/get_scenarios/" class="md-nav__link">
+        Сценарии
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user_media/get_media_files/" class="md-nav__link">
+        Медиафайлы
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaigns/" class="md-nav__link">
+        Рекламные кампании
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sales_funnel_and_deals/" class="md-nav__link">
+        Воронки продаж и Сделки
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/" class="md-nav__link">
+        Сайты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/" class="md-nav__link">
+        Отчёты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        Теги
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../employees/" class="md-nav__link">
+        Сотрудники
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contacts/" class="md-nav__link">
+        Адресная книга
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blacklist/" class="md-nav__link">
+        Черный список
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedules/" class="md-nav__link">
+        Графики активности
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get_campaign_daily_stat/" class="md-nav__link">
+        Получения статистики РК по дням
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../partners/" class="md-nav__link">
+        Клиенты агентов
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../communications/" class="md-nav__link">
+        Загрузка коммуникаций
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../persons/" class="md-nav__link">
+        Персона/Визитор
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Получение информации по оффлайн заявкам
+  </a>
+  
+    <nav class="md-nav" aria-label="Получение информации по оффлайн заявкам">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Параметры запроса
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Параметры ответа
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    JSON структура запроса
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json_1" class="md-nav__link">
+    JSON структура ответа
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Список возвращаемых ошибок
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Получение информации по оффлайн заявкам</h1>
+                
+                <nav>
+<a href="../../reports">Отчёты</a> >
+Получение информации по оффлайн заявкам
+</nav>
+
+<h2 id="_1">Получение информации по оффлайн заявкам</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Метод</th>
+<th align="left"><code>get.offline_messages_report</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Описание</td>
+<td align="left">Получение информации по оффлайн заявкам</td>
+</tr>
+<tr>
+<td align="left">Кому доступен</td>
+<td align="left">Партнёр, Клиент</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">Параметры запроса</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Название</th>
+<th align="left">Тип</th>
+<th align="center">Обязательный</th>
+<th align="left">Допустимые значения</th>
+<th align="left">Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>access_token</code></td>
+<td align="left">string</td>
+<td align="center">да</td>
+<td align="left"></td>
+<td align="left">Ключ сессии аутентификации</td>
+</tr>
+<tr>
+<td align="left"><code>user_id</code></td>
+<td align="left">number</td>
+<td align="center">нет</td>
+<td align="left"></td>
+<td align="left">Уникальный идентификатор пользователя клиента агента от имени которого делается запрос <blockquote>Является обязательным для агента</blockquote> Для получения списка пользователей клиента необходимо использовать метод <a href="../../Partners/#get_customer_user">"get.customer_users"</a></td>
+</tr>
+<tr>
+<td align="left"><code>limit</code></td>
+<td align="left">number</td>
+<td align="center">нет</td>
+<td align="left"></td>
+<td align="left">Количество возвращаемых записей. См. раздел <a href="../..#_paging">"Постраничный вывод"</a></td>
+</tr>
+<tr>
+<td align="left"><code>offset</code></td>
+<td align="left">number</td>
+<td align="center">нет</td>
+<td align="left"></td>
+<td align="left">Сдвиг, определяет с какого номера записи возвращать <code>"limit"</code> записей. По умолчанию "0". См. раздел <a href="../..#_paging">"Постраничный вывод"</a></td>
+</tr>
+<tr>
+<td align="left"><code>filter</code></td>
+<td align="left">object</td>
+<td align="center">нет</td>
+<td align="left"></td>
+<td align="left">См. раздел <a href="../..#_filters">"Критерии фильтрации"</a></td>
+</tr>
+<tr>
+<td align="left"><code>fields</code></td>
+<td align="left">array</td>
+<td align="center">нет</td>
+<td align="left"></td>
+<td align="left">См. раздел <a href="../..#_views">"Представление возвращаемых данных"</a></td>
+</tr>
+<tr>
+<td align="left"><code>sort</code></td>
+<td align="left">array</td>
+<td align="center">нет</td>
+<td align="left"></td>
+<td align="left">См. раздел <a href="../..#_sort">"Сортировка данных"</a></td>
+</tr>
+<tr>
+<td align="left"><code>date_from</code></td>
+<td align="left">iso8601</td>
+<td align="center">да</td>
+<td align="left">YYYY-MM-DD hh:mm:ss</td>
+<td align="left">Дата начала выборки</td>
+</tr>
+<tr>
+<td align="left"><code>date_till</code></td>
+<td align="left">iso8601</td>
+<td align="center">да</td>
+<td align="left">YYYY-MM-DD hh:mm:ss</td>
+<td align="left">Дата окончания выборки</td>
+</tr>
+<tr>
+<td align="left"><code>include_tech_offline_messages</code></td>
+<td align="left">boolean</td>
+<td align="center">нет</td>
+<td align="left"></td>
+<td align="left">Включить технические заявки, не являющиеся коммуникациями с клиентами</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">Параметры ответа</h3>
+<table>
+    <tbody>
+        <tr>
+            <th>Название</th>
+            <th>Тип</th>
+            <th>Допустимые значения</th>
+            <th>Фильтрация</th>
+            <th>Сортировка</th>
+            <th>Ответ по умолчанию</th>
+            <th>Описание</th>
+        </tr>
+        <tr>
+            <td><code>id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td>да</td>
+            <td>Уникальный идентификатор
+оффлайн заявки</td>
+        </tr>
+        <tr>
+            <td><code>date_time</code></td>
+            <td>iso8601</td>
+            <td>YYYY-MM-DD hh:mm:ss</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Дата и время получения заявки</td>
+        </tr>
+        <tr>
+            <td><code>text</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>да</td>
+            <td>Текст заявки</td>
+        </tr>
+        <tr>
+            <td><code>communication_number</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Номер обращения.
+Расcчитывается в рамках
+персоны.</td>
+        </tr>
+        <tr>
+            <td><code>communication_page_url</code></td>
+            <td>string</td>
+            <td></td>
+            <td>нет</td>
+            <td>нет</td>
+            <td>нет</td>
+            <td>
+                URL страницы на которой находился посетитель в момент обращения или страница последнего взаимодействия посетителя перед обращением.
+            </td>
+        </tr>
+        <tr>
+            <td><code>communication_type</code></td>
+            <td>enum</td>
+            <td><code>offline_message</code></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Тип обращения</td>
+        </tr>
+        <tr>
+            <td><code>communication_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td>да</td>
+            <td>Уникальный идентификатор
+обращения</td>
+        </tr>
+        <tr>
+            <td><code>ua_client_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор в
+Universal Analytics</td>
+        </tr>
+        <tr>
+            <td><code>ym_client_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор пользователя Яндекс.Метрики</td>
+        </tr>
+        <tr>
+            <td><code>sale_date</code></td>
+            <td>iso8601</td>
+            <td>YYY-MM-DD
+hh:mm:ss</td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Дата сделки</td>
+        </tr>
+        <tr>
+            <td><code>sale_cost</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Сумма сделки</td>
+        </tr>
+        <tr>
+            <td><code>status</code></td>
+            <td>enum</td>
+            <td>
+                <ul>
+                    <li><code>processing</code></li>
+                    <li><code>processed</code></li>
+                    <li><code>not_processed</code></li>
+                </ul>
+            </td>
+            <td>да</td>
+            <td>да</td>
+            <td>да</td>
+            <td>Статус заявки</td>
+        </tr>
+        <tr>
+            <td><code>process_time</code></td>
+            <td>iso8601</td>
+            <td>YYYY-MM-DD
+hh:mm:ss</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Дата и время, когда заявка была
+переведена в статус "Обработано"
+(см. параметр <code>"status"</code>)</td>
+        </tr>
+        <tr>
+            <td><code>form_type</code></td>
+            <td>enum</td>
+            <td>Пользовательская,
+               <br>Стандартная,
+                <br>DataAPI</td>
+            <td>да</td>
+            <td>да</td>
+            <td>да</td>
+            <td>Тип формы с которой была
+отправлена оффлайн заявка</td>
+        </tr>
+        <tr>
+            <td><code>form_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Название формы заявки, если заполнен параметр form_name при передачи заявки в наш сервис: https://www.comagic.ru/support/api/javascript-api/</td>
+        </tr>
+        <tr>
+            <td><code>search_query</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Поисковый запрос</td>
+        </tr>
+        <tr>
+            <td><code>search_engine</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Название поисковой системы</td>
+        </tr>
+        <tr>
+            <td><code>referrer_domain</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Домен реферера</td>
+        </tr>
+        <tr>
+            <td><code>referrer</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Источник перехода</td>
+        </tr>
+        <tr>
+            <td><code>entrance_page</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Страница входа</td>
+        </tr>
+        <tr>
+            <td><code>gclid</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Google Click Identifier</td>
+        </tr>
+        <tr>
+            <td><code>yclid</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Yandex Click Identifier</td>
+        </tr>
+        <tr>
+            <td><code>ymclid</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Yandex Market Click Identifier</td>
+        </tr>
+        <tr>
+            <td><code>ef_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Используется для разметки
+ссылок в системе управления
+контекстной рекламой AdLense</td>
+        </tr>
+        <tr>
+            <td><code>channel</code></td>
+            <td>enum</td>
+            <td>
+                <ul>
+                    <li><code>display</code></li>
+                    <li><code>paid</code></li>
+                    <li><code>affiliate</code></li>
+                    <li><code>messenger</code></li>
+                    <li><code>social</code></li>
+                    <li><code>email</code></li>
+                    <li><code>organic</code></li>
+                    <li><code>internal</code></li>
+                    <li><code>recommendation</code></li>
+                    <li><code>cashed</code></li>
+                    <li><code>referral</code></li>
+                    <li><code>direct</code></li>
+                </ul>
+            </td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Канал.</td>
+        </tr>
+        <tr>
+            <td colspan="7">Группа, выбранная посетителем</td>
+        </tr>
+        <tr>
+            <td><code>group_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Уникальный идентификатор
+группы, выбранной постетителем</td>
+        </tr>
+        <tr>
+            <td><code>group_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Название группы, выбранной
+посетителем</td>
+        </tr>
+        <tr>
+            <td colspan="7">Сотрудник</td>
+        </tr>
+        <tr>
+            <td><code>employee_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td>да</td>
+            <td>Уникальный идентификатор
+сотрудника, который обработал
+заявку</td>
+        </tr>
+        <tr>
+            <td><code>employee_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Фамилия Имя Сотрудника,
+который обработал заявку</td>
+        </tr>
+        <tr>
+            <td><code>employee_answer_message</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Ответ сотрудника, который был
+отправлен на адрес электронной
+почты посетителя</td>
+        </tr>
+        <tr>
+            <td><code>employee_comment</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Комментарий сотрудника при
+переводе заявки в статус
+"Обработано" (см. поле <code>"status"</code>)</td>
+        </tr>
+        <tr>
+            <td colspan="7">Проставленные теги</td>
+        </tr>
+        <tr>
+            <td><code>tags</code></td>
+            <td>array</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Теги, см. метод <code>"get.tags"</code></td>
+        </tr>
+        <tr>
+            <td><code>tag_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор тега</td>
+        </tr>
+        <tr>
+            <td><code>tag_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Название тега</td>
+        </tr>
+        <tr>
+            <td><code>tag_change_time</code></td>
+            <td>iso8601</td>
+            <td>YYYY-MM-DD
+hh:mm:ss</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Время простановки тега</td>
+        </tr>
+        <tr>
+            <td><code>tag_type</code></td>
+            <td>enum</td>
+            <td><code>auto</code>, <code>manual</code></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Тип тега</td>
+        </tr>
+        <tr>
+            <td><code>tag_user_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор
+пользователя, который проставил
+тег</td>
+        </tr>
+        <tr>
+            <td><code>tag_user_login</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Логин пользователя, который
+проставил тег</td>
+        </tr>
+        <tr>
+            <td><code>tag_employee_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор
+сотрудника, который проставил
+тег</td>
+        </tr>
+        <tr>
+            <td><code>tag_employee_full_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Ф.И.О. сотрудника, который
+проставил тег</td>
+        </tr>
+        <tr>
+            <td colspan="7">Сайт</td>
+        </tr>
+        <tr>
+            <td><code>site_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td>да</td>
+            <td>Уникальный идентификатор сайта</td>
+        </tr>
+        <tr>
+            <td><code>site_domain_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>
+                Адрес сайта в интернете. Без
+                указания протокола - <code>"http://"</code> или
+                <code>"https://"</code>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7">Рекламная кампания</td>
+        </tr>
+        <tr>
+            <td><code>campaign_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td>да</td>
+            <td>Уникальный идентификатор
+рекламной кампании</td>
+        </tr>
+        <tr>
+            <td><code>campaign_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Название рекламной кампании</td>
+        </tr>
+        <tr>
+            <td><code>visit_other_campaign</code></td>
+            <td>boolean</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Флаг показывает заходил ли
+посетитель (в пределах персоны)
+по другим рекламным кампаниям</td>
+        </tr>
+        <tr>
+            <td colspan="7">Информация о посетителе</td>
+        </tr>
+        <tr>
+            <td><code>visitor_phone_number</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td>да</td>
+            <td>Номер телефона посетителя
+оставленный в заявке</td>
+        </tr>
+        <tr>
+            <td><code>visitor_email</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td>да</td>
+            <td>Адрес электронной почты
+оставленный посетителем</td>
+        </tr>
+        <tr>
+            <td><code>visitor_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td>да</td>
+            <td>Имя, которое оставил посетитель
+при подаче заявки</td>
+        </tr>
+        <tr>
+            <td><code>visitor_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td>да</td>
+            <td>Уникальный идентификатор посетителя</td>
+        </tr>
+        <tr>
+            <td><code>person_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Уникальный идентификатор
+персоны</td>
+        </tr>
+        <tr>
+            <td><code>visitor_type</code></td>
+            <td>enum</td>
+            <td>Новый,
+Вернувшийся, Не
+заполнен</td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Тип посетителя</td>
+        </tr>
+        <tr>
+            <td><code>visitor_session_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td>да</td>
+            <td>Уникальный идентификатор
+сессии посетителя, см. <code>"get.visitor_sessions_report"</code></td>
+        </tr>
+        <tr>
+            <td><code>visits_count</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Общее количество посещений
+посетителя</td>
+        </tr>
+        <tr>
+            <td><code>visitor_first_campaign_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор
+первой рекламной кампании.</td>
+        </tr>
+        <tr>
+            <td><code>visitor_first_campaign_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Название первой рекламной
+кампании</td>
+        </tr>
+        <tr>
+            <td><code>visitor_city</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Город посетителя</td>
+        </tr>
+        <tr>
+            <td><code>visitor_country</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Страна посетителя</td>
+        </tr>
+        <tr>
+            <td><code>visitor_region</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Регион посетителя</td>
+        </tr>
+        <tr>
+            <td><code>visitor_device</code></td>
+            <td>enum</td>
+            <td>
+                <ul>
+                    <code>desktop</code>
+                    <code>mobile</code>
+                    <code>tablet</code>
+                    <code>other</code>
+                </ul>
+            </td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Устройство посетителя</td>
+        </tr>
+        <tr>
+            <td colspan="7">Свойства посетителя</td>
+        </tr>
+        <tr>
+            <td><code>visitor_custom_properties</code></td>
+            <td>array</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>
+                Свойства посетителя, которые
+                могут быть заданы через личный
+                кабинет или с помощью JavaScript
+                API [метод
+                <code>Comagic.setProperty(name, value);</code>]
+            </td>
+        </tr>
+        <tr>
+            <td><code>property_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Имя свойства, которое должно
+быть присвоено посетителю</td>
+        </tr>
+        <tr>
+            <td><code>property_value</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Значение свойства</td>
+        </tr>
+        <tr>
+            <td colspan="7">Сегменты</td>
+        </tr>
+        <tr>
+            <td><code>segments</code></td>
+            <td>array</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Сегменты</td>
+        </tr>
+        <tr>
+            <td><code>segment_id</code></td>
+            <td>number</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Уникальный идентификатор
+сегмента</td>
+        </tr>
+        <tr>
+            <td><code>segment_name</code></td>
+            <td>string</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Название сегмента</td>
+        </tr>
+        <tr>
+            <td colspan="7">UTM-метки</td>
+        </tr>
+        <tr>
+            <td><code>utm_source</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Источник кампании</td>
+        </tr>
+        <tr>
+            <td><code>utm_medium</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Канал кампании</td>
+        </tr>
+        <tr>
+            <td><code>utm_term</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Ключевое слово кампании</td>
+        </tr>
+        <tr>
+            <td><code>utm_content</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Содержание кампании</td>
+        </tr>
+        <tr>
+            <td><code>utm_campaign</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Название кампании</td>
+        </tr>
+        <tr>
+            <td colspan="7">OS-метки</td>
+        </tr>
+        <tr>
+            <td><code>openstat_ad</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Идентификатор рекламного
+объявления</td>
+        </tr>
+        <tr>
+            <td><code>openstat_campaign</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Идентификатор рекламной
+кампании</td>
+        </tr>
+        <tr>
+            <td><code>openstat_service</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Идентификатор сервиса,
+предоставляющего услуги</td>
+        </tr>
+        <tr>
+            <td><code>openstat_source</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Идентификатор площадки,
+раздела, страницы, места на
+странице, на котором было
+показано соответствующее
+рекламное объявление</td>
+        </tr>
+        <tr>
+            <td colspan="7">Атрибуты обращения</td>
+        </tr>
+        <tr>
+            <td><code>attributes</code></td>
+            <td>array</td>
+            <td>
+                <ul>
+                    <li><code>first</code> - Первый качественный</li>
+                    <li><code>through</code> - Сквозной первый качественный</li>
+                    <li><code>primary</code> - Первичное</li>
+                    <li><code>secondary</code> - Вторичное</li>
+                    <li><code>lost</code> - Потерянное</li>
+                    <li><code>target</code> - Целевое</li>
+                    <li><code>off-target</code> - Не целевое</li>
+                    <li><code>quality</code> - Качественное</li>
+                    <li><code>rest</code> - целевые повторные обращения (обращения, совершенные в период повторного обращения, настроенного для сайта в ЛК CoMagic).</li>
+                </ul>
+            </td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>
+                    Атрибуты обращения
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7">Расширенные UTM-метки</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_source</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Расширенная utm_source</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_medium</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Расширенная utm_medium</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_term</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Расширенная utm_term</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_content</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Расширенная utm_content</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_campaign</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Расширенная utm_campaign</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_referrer</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Расширенная utm_referrer</td>
+        </tr>
+        <tr>
+            <td><code>eq_utm_expid</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td></td>
+            <td></td>
+            <td>Расширенная utm_expid</td>
+        </tr>
+        <tr>
+      <td colspan="7">Информация об источнике</td>
+    </tr>
+    <tr>
+      <td><code>source_id</code></td>
+      <td>number</td>
+      <td></td>
+      <td>да</td>
+      <td>да</td>
+      <td></td>
+      <td>Идентификатор Источника(детальный).</td>
+    </tr>
+    <tr>
+      <td><code>source_name</code></td>
+      <td>string</td>
+      <td></td>
+      <td>да</td>
+      <td>да</td>
+      <td></td>
+      <td>Источник(детальный). Название источника</td>
+    </tr>
+    <tr>
+      <td><code>source_new</code></td>
+      <td>string</td>
+      <td></td>
+      <td>да</td>
+      <td>да</td>
+      <td></td>
+      <td>Источник(new). Группа источника</td>
+    </tr>
+    <tr>
+      <td><code>channel_new</code></td>
+      <td>string</td>
+      <td></td>
+      <td>да</td>
+      <td>да</td>
+      <td></td>
+      <td>Канал(new). Название канала источника</td>
+    </tr>
+    <tr>
+      <td><code>channel_code</code></td>
+      <td>string</td>
+      <td></td>
+      <td>да</td>
+      <td>да</td>
+      <td></td>
+      <td>Мнемоника канала</td>
+    </tr>
+        <td colspan="7">Параметры из внешних систем</td>
+    </tr>
+        <tr>
+            <td><code>ext_id</code></td>
+            <td>string</td>
+            <td></td>
+            <td>да</td>
+            <td>да</td>
+            <td></td>
+            <td>Уникальный идентификатор заявки в вашей системе.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="json">JSON структура запроса</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;,
+  &quot;id&quot;:&quot;number&quot;,
+  &quot;method&quot;:&quot;get.offline_messages_report&quot;,
+  &quot;params&quot;:{
+    &quot;access_token&quot;:&quot;string&quot;,
+    &quot;user_id&quot;:&quot;number&quot;,
+    &quot;offset&quot;:&quot;number&quot;,
+    &quot;limit&quot;:&quot;number&quot;,
+    &quot;date_from&quot;:&quot;iso8601&quot;,
+    &quot;date_till&quot;:&quot;iso8601&quot;,
+    &quot;filter&quot;:{
+
+    },
+    &quot;sort&quot;:[
+      {
+        &quot;field&quot;:&quot;string&quot;,
+        &quot;order&quot;:&quot;string&quot;
+      }
+    ],
+    &quot;fields&quot;:[
+      &quot;string&quot;
+    ]
+  }
+}
+</code></pre>
+<h3 id="json_1">JSON структура ответа</h3>
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;,
+  &quot;id&quot;:&quot;number&quot;,
+  &quot;result&quot;:{
+    &quot;metadata&quot;:{
+
+    },
+    &quot;data&quot;:[
+      {
+        &quot;id&quot;:&quot;number&quot;,
+        &quot;date_time&quot;:&quot;iso8601&quot;,
+        &quot;text&quot;:&quot;string&quot;,
+        &quot;communication_number&quot;:&quot;number&quot;,
+        &quot;communication_page_url&quot;: &quot;string&quot;,
+        &quot;communication_type&quot;:&quot;enum&quot;,
+        &quot;communication_id&quot;:&quot;number&quot;,
+        &quot;ua_client_id&quot;:&quot;string&quot;,
+        &quot;ym_client_id&quot;: &quot;string&quot;,
+        &quot;sale_date&quot;:&quot;iso8601&quot;,
+        &quot;sale_cost&quot;:&quot;number&quot;,
+        &quot;status&quot;:&quot;enum&quot;,
+        &quot;process_time&quot;:&quot;iso8601&quot;,
+        &quot;form_type&quot;:&quot;enum&quot;,
+                &quot;form_name&quot;:&quot;string&quot;,
+        &quot;search_query&quot;:&quot;string&quot;,
+        &quot;search_engine&quot;:&quot;string&quot;,
+        &quot;referrer_domain&quot;:&quot;string&quot;,
+        &quot;referrer&quot;:&quot;string&quot;,
+        &quot;entrance_page&quot;:&quot;string&quot;,
+        &quot;gclid&quot;:&quot;string&quot;,
+        &quot;yclid&quot;:&quot;string&quot;,
+        &quot;ymclid&quot;:&quot;string&quot;,
+        &quot;ef_id&quot;:&quot;string&quot;,
+        &quot;channel&quot;:&quot;enum&quot;,
+        &quot;employee_id&quot;:&quot;number&quot;,
+        &quot;employee_full_name&quot;:&quot;string&quot;,
+        &quot;employee_answer_message&quot;:&quot;string&quot;,
+        &quot;employee_comment&quot;:&quot;string&quot;,
+        &quot;tags&quot;:[
+          {
+            &quot;tag_id&quot;:&quot;number&quot;,
+            &quot;tag_name&quot;:&quot;string&quot;,
+            &quot;tag_type&quot;:&quot;enum&quot;,
+            &quot;tag_change_time&quot;:&quot;iso8601&quot;,
+            &quot;tag_user_id&quot;:&quot;number&quot;,
+            &quot;tag_user_login&quot;:&quot;string&quot;,
+            &quot;tag_employee_id&quot;:&quot;number&quot;,
+            &quot;tag_employee_full_name&quot;:&quot;string&quot;
+          }
+        ],
+        &quot;site_id&quot;:&quot;number&quot;,
+        &quot;site_domain_name&quot;:&quot;string&quot;,
+        &quot;group_id&quot;:&quot;number&quot;,
+        &quot;group_name&quot;:&quot;string&quot;,
+        &quot;campaign_id&quot;:&quot;number&quot;,
+        &quot;campaign_name&quot;:&quot;string&quot;,
+        &quot;visit_other_campaign&quot;:&quot;boolean&quot;,
+        &quot;visitor_id&quot;:&quot;number&quot;,
+        &quot;visitor_name&quot;:&quot;string&quot;,
+        &quot;visitor_phone_number&quot;:&quot;number&quot;,
+        &quot;visitor_email&quot;:&quot;string&quot;,
+        &quot;person_id&quot;:&quot;number&quot;,
+        &quot;visitor_type&quot;:&quot;enum&quot;,
+        &quot;visitor_session_id&quot;:&quot;number&quot;,
+        &quot;visits_count&quot;:&quot;number&quot;,
+        &quot;visitor_first_campaign_id&quot;:&quot;number&quot;,
+        &quot;visitor_first_campaign_name&quot;:&quot;string&quot;,
+        &quot;visitor_city&quot;:&quot;string&quot;,
+        &quot;visitor_region&quot;:&quot;string&quot;,
+        &quot;visitor_country&quot;:&quot;string&quot;,
+        &quot;visitor_device&quot;:&quot;enum&quot;,
+        &quot;visitor_custom_properties&quot;:[
+          {
+            &quot;property_name&quot;:&quot;string&quot;,
+            &quot;property_value&quot;:&quot;string&quot;
+          }
+        ],
+        &quot;segments&quot;:[
+          {
+            &quot;segment_id&quot;:&quot;number&quot;,
+            &quot;segment_name&quot;:&quot;string&quot;
+          }
+        ],
+        &quot;utm_source&quot;:&quot;string&quot;,
+        &quot;utm_medium&quot;:&quot;string&quot;,
+        &quot;utm_term&quot;:&quot;string&quot;,
+        &quot;utm_content&quot;:&quot;string&quot;,
+        &quot;utm_campaign&quot;:&quot;string&quot;,
+        &quot;openstat_ad&quot;:&quot;string&quot;,
+        &quot;openstat_campaign&quot;:&quot;string&quot;,
+        &quot;openstat_service&quot;:&quot;string&quot;,
+        &quot;openstat_source&quot;:&quot;string&quot;,
+        &quot;eq_utm_source&quot;: &quot;string&quot;,
+        &quot;eq_utm_medium&quot;: &quot;string&quot;,
+        &quot;eq_utm_term&quot;: &quot;string&quot;,
+        &quot;eq_utm_content&quot;: &quot;string&quot;,
+        &quot;eq_utm_campaign&quot;: &quot;string&quot;,
+        &quot;eq_utm_referrer&quot;: &quot;string&quot;,
+        &quot;eq_utm_expid&quot;: &quot;string&quot;,
+        &quot;attributes&quot;:[
+
+        ],
+        &quot;source_id&quot;: &quot;number&quot;,
+        &quot;source_name&quot;: &quot;string&quot;,
+        &quot;source_new&quot;: &quot;string&quot;,
+        &quot;channel_new&quot;: &quot;string&quot;,
+        &quot;channel_code&quot;: &quot;string&quot;,
+                &quot;ext_id&quot;: &quot;string&quot;
+      }
+    ]
+  }
+}
+</code></pre>
+<h3 id="_4">Список возвращаемых ошибок</h3>
+<p>Смотрим раздел <a href="../..#_getErrors">"Список ошибок для методов с глаголом get"</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  </body>
+</html>
