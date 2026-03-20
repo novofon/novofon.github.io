@@ -1,0 +1,1321 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Загрузка звонков и разговоров - DATA API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DATA API" class="md-header__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DATA API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Загрузка звонков и разговоров
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DATA API" class="md-nav__button md-logo" aria-label="DATA API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DATA API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Общая информация
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/" class="md-nav__link">
+        Права и компоненты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account/get_account/" class="md-nav__link">
+        Аккаунт
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vn/" class="md-nav__link">
+        Виртуальные номера
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sip/" class="md-nav__link">
+        SIP-линии
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scenario/get_scenarios/" class="md-nav__link">
+        Сценарии
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user_media/get_media_files/" class="md-nav__link">
+        Медиафайлы
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campaigns/" class="md-nav__link">
+        Рекламные кампании
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sales_funnel_and_deals/" class="md-nav__link">
+        Воронки продаж и Сделки
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/" class="md-nav__link">
+        Сайты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/" class="md-nav__link">
+        Отчёты
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        Теги
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../employees/" class="md-nav__link">
+        Сотрудники
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contacts/" class="md-nav__link">
+        Адресная книга
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blacklist/" class="md-nav__link">
+        Черный список
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedules/" class="md-nav__link">
+        Графики активности
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../report/get_campaign_daily_stat/" class="md-nav__link">
+        Получения статистики РК по дням
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../partners/" class="md-nav__link">
+        Клиенты агентов
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../communications/" class="md-nav__link">
+        Загрузка коммуникаций
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../persons/" class="md-nav__link">
+        Персона/Визитор
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Параметры запроса
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Параметры ответа
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Параметры уведомления о статусе обработки
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wav-" class="md-nav__link">
+    Требования к wav-файлам для речевой аналитики
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Загрузка звонков и разговоров</h1>
+                
+                <nav>
+<a href="../../communications/#_3"> Загрузка коммуникаций </a> >
+Загрузка коммуникаций
+</nav>
+
+<table>
+<thead>
+<tr>
+<th align="left">Параметр</th>
+<th align="left">Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Необходимые компоненты для работы с методом</td>
+<td align="left">"Data API для настройки", "Загрузка звонков из внешней системы"</td>
+</tr>
+<tr>
+<td align="left">Необходимые компоненты для работы с файлами разговоров в формате wav</td>
+<td align="left">"Речевая аналитика звонков"</td>
+</tr>
+<tr>
+<td align="left">Вес метода</td>
+<td align="left">5 балов</td>
+</tr>
+<tr>
+<td align="left">Максимальное количество звонков в одном запросе</td>
+<td align="left">500 шт</td>
+</tr>
+<tr>
+<td align="left">Максимальный размер JSON</td>
+<td align="left">512 Кб</td>
+</tr>
+<tr>
+<td align="left">IP адрес сервера, которому необходимо дать доступ для загрузки файлов</td>
+<td align="left">195.211.122.249</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="left">Метод</th>
+<th align="left"><code>upload.calls</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Описание</td>
+<td align="left">Загрузка звонков и разговоров для речевой или сквозной аналитики</td>
+</tr>
+<tr>
+<td align="left">Кому доступен</td>
+<td align="left">Агент, Клиент</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">Параметры запроса</h3>
+<table>
+   <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Обязательный</th>
+      <th>Допустимые значения</th>
+      <th>Описание</th>
+   </tr>
+   <tr>
+      <td><code>access_token</code></td>
+      <td>string</td>
+      <td>да</td>
+      <td></td>
+      <td>Ключ сессии аутентификации</td>
+   </tr>
+   <tr>
+      <td><code>user_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td> Уникальный идентификатор пользователя клиента агента от имени которого делается запрос
+           <blockquote>Является обязательным для агента</blockquote> Для получения списка пользователей клиента необходимо использовать метод  <a href="../../Partners/#get_customer_user">"get.customer_users"</a>
+      </td>
+   </tr>
+   <tr>
+      <td><code>calls</code></td>
+      <td>array</td>
+      <td>да</td>
+      <td></td>
+      <td>Список звонков. Максимально 500</td>
+   </tr>
+   <tr>
+      <td><code>ext_id</code></td>
+      <td>string</td>
+      <td>да</td>
+      <td></td>
+      <td>Уникальный идентификатор звонка в вашей системе.
+          <blockquote>Если в системе уже есть успешно загруженный звонок или уже есть 3 попытки ошибочной загрузки звонка с данным ext_id, то данный звонок будет игнорирован.</blockquote>
+      </td>
+   </tr>
+   <tr>
+      <td><code>direction</code></td>
+      <td>enum</td>
+      <td>нет</td>
+      <td>
+        <li>in - входящий звонок</li>
+        <li>out - исходящий звонок</li>
+      </td>
+      <td>Направление звонка
+      <blockquote>Значение по умолчанию 'in'</blockquote>
+      </td>
+   </tr>
+   <tr>
+      <td><code>calling_phone_number</code></td>
+      <td>string</td>
+      <td>да</td>
+      <td>
+        E164. Если <code>direction = in</code> может быть ""
+      </td>
+      <td>Номер звонящего</td>
+   </tr>
+   <tr>
+      <td><code>called_phone_number</code></td>
+      <td>string</td>
+      <td>да</td>
+      <td>
+        E164. Если <code>direction = out</code> может быть ""
+      </td>
+      <td>Номер куда звонили</td>
+   </tr>
+   <tr>
+      <td><code>start_time</code></td>
+      <td>iso8601</td>
+      <td>да</td>
+      <td>
+        YYYY-MM-DD hh:mm:ss
+      </td>
+      <td>Дата и время начала сессии звонка
+      </td>
+   </tr>
+   <tr>
+      <td><code>finish_time</code></td>
+      <td>iso8601</td>
+      <td>да</td>
+      <td>
+        YYYY-MM-DD hh:mm:ss
+      </td>
+      <td>Время окончания сессии звонка. Не может быть меньше чем <code>start_time</code>
+      </td>
+   </tr>
+   <tr>
+      <td><code>is_lost</code></td>
+      <td>boolean</td>
+      <td>да</td>
+      <td></td>
+      <td>Признак, что звонок потерянный или успешный</td>
+   </tr>
+   <tr>
+      <td><code>is_transfer</code></td>
+      <td>boolean</td>
+      <td>нет</td>
+      <td></td>
+      <td>Значение по умолчанию `false`. Признак, был ли трансфер в сессии звонка
+      <blockquote>Порядок разговора сотрудников определяется в параметрах wav_records и mp3_records</blockquote>
+      </td>
+   </tr>
+   <tr>
+      <td><code>wait_duration</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Длительность ожидания абонента до первого разговора с сотрудником. Значение в секундах.</td>
+   </tr>
+   <tr>
+      <td><code>talk_duration</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Длительность разговора - от момента первого разговора абонента с сотрудником до окончания разговора с последним сотрудником. Значение в секундах</td>
+   </tr>
+   <tr>
+      <td><code>visitor_session_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Уникальный идентификатор сессии посетителя полученной из CoMagic. Параметр нужен, если требуется аналитика рекламных кампаний.</td>
+   </tr>
+   <tr>
+      <td><code>campaign_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Уникальный идентификатор рекламной кампании в CoMagic.
+      <blockquote>Параметр игнорируется, если заполнен visitor_session_id</blockquote></td>
+   </tr>
+   <tr>
+      <td><code>source_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Уникальный идентификатор источника. Возможно передать только неудаленный источник в разрезе клиента. Если передан <code>visitor_session_id</code>, то определим <code>source_id</code> по параметрам сессии.
+   </tr>
+   <tr>
+      <td><code>site_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Уникальный идентификатор сайта в CoMagic <blockquote>Параметр игнорируется, если заполнен <code>visitor_session_id</code> или <code>called_phone_number</code> принадлежит другому сайту.</blockquote></td>
+   </tr>
+   <tr>
+      <td><code>comment</code></td>
+      <td>string</td>
+      <td>нет</td>
+      <td></td>
+      <td>Комментарий к звонку. Можно указывать название сервиса или формы, которые сгенерировали звонок.</td>
+   </tr>
+   <tr>
+      <td colspan = 5>Уведомление об обработке звонка</td>
+   </tr>
+      <tr>
+      <td><code>callback</code></td>
+      <td>object</td>
+      <td>нет</td>
+      <td></td>
+      <td>Уведомление об обработке звонка
+      <blockquote>Формат уведомления JSON</blockquote>
+      </td>
+   </tr>
+   </tr>
+      <tr>
+      <td><code>url</code></td>
+      <td>string</td>
+      <td>да</td>
+      <td></td>
+      <td>http/https адрес на которые будет отправлено уведомление об успешной обработке звонка.
+      </td>
+   </tr>
+   </tr>
+      <tr>
+      <td><code>events</code></td>
+      <td>array</td>
+      <td>да</td>
+      <td>
+        <li><code>processed</code> - переданный звонок обработан успешно</li>
+        <li><code>in_process</code> - звонок в процессе обработки</li>
+        <li><code>error</code> - ошибка обработки звонка</li>
+      </td>
+      <td>Какие уведомления об обработке звонка получать
+      </td>
+   </tr>
+   <tr>
+      <td colspan = 5>Теги звонка</td>
+   </tr>
+   <tr>
+      <td><code>tags</code></td>
+      <td>array</td>
+      <td>нет</td>
+      <td></td>
+      <td>Теги звонка</td>
+   </tr>
+   <tr>
+      <td><code>tag_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Уникальный идентификатор тега в системе CoMagic</td>
+   </tr>
+   <tr>
+      <td><code>tag_name</code></td>
+      <td>string</td>
+      <td>да</td>
+      <td></td>
+      <td>Название тега. <blockquote>Ищем по названию тег в нашей системе, если не нашли, то создаем и ставим его на звонок. Если нашли, то ставим найденный тег на звонок. Поиск чувствительный к регистру.  Для простановки тега "Продажа" необходимо использовать метод  <a href="../../Tags/">"set.tag_sales"</a>Игнорируется, если заполнен <code>tag_id</code></blockquote></td>
+   </tr>
+   <tr>
+      <td colspan = 5>Файлы разговора для речевой аналитики</td>
+   </tr>
+   <tr>
+      <td><code>wav_records</code></td>
+      <td>array</td>
+      <td>нет</td>
+      <td></td>
+      <td>Файлы разговора для речевой аналитики
+      <blockquote>Возможно передать только если подключен компонент  "Речевая аналитика звонков".
+      Из wav-файлов автоматически создаются mp3-записи для прослушивания в личном кабинете
+      </blockquote>
+      </td>
+   </tr>
+   <tr>
+      <td><code>employee_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Уникальный идентификатор сотрудника в системе CoMagic</td>
+   </tr>
+   <tr>
+      <td><code>employee_name</code></td>
+      <td>string</td>
+      <td>да</td>
+      <td></td>
+      <td>Название сотрудника (ФИО) <blockquote>Ищем сотрудника по названию (ФИО) в нашей системе, если не нашли, то создаем и связываем его со звонком. Если нашли, то связываем его со звонком. Поиск не чувствительный к регистру. Игнорируется, если заполнен <code>employee_id</code></blockquote></td>
+   </tr>
+   <tr>
+      <td><code>employee_channel</code></td>
+      <td>enum</td>
+      <td>да</td>
+      <td>
+        <li>left</li> - левый канал
+        <li>right</li> - правый канал
+        </td>
+      <td>Указывает в каком канале находится сотрудник
+      <blockquote>Значения только left или right</blockquote>
+      </td>
+   </tr>
+   <tr>
+      <td><code>record_url</code></td>
+      <td>string</td>
+      <td>да</td>
+      <td></td>
+      <td>Адрес по которому можно скачать файл разговора. Ожидаем только https.</td>
+   </tr>
+    <tr>
+      <td colspan = 5>Файлы разговора для прослушивания в личном кабинете</td>
+   </tr>
+   <tr>
+      <td><code>mp3_records</code></td>
+      <td>array</td>
+      <td>нет</td>
+      <td></td>
+      <td>Файлы разговора для прослушивания в личном кабинете.
+      <blockquote>Запрещено передавать, если заполнен параметр wav_records</blockquote>
+      </td>
+   </tr>
+   <tr>
+      <td><code>employee_name</code></td>
+      <td>string</td>
+      <td>нет</td>
+      <td></td>
+      <td>Название сотрудника (ФИО)<blockquote>Ищем сотрудника по названию (ФИО) в нашей системе, если не нашли, то создаем и связываем его со звонком. Если нашли, то связываем его со звонком. Поиск не чувствительный к регистру. Игнорируется, если заполнен <code>employee_id</code></blockquote></td>
+   </tr>
+   <tr>
+      <td><code>employee_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Уникальный идентификатор сотрудника в системе CoMagic</td>
+   </tr>
+   <tr>
+      <td><code>record_url</code></td>
+      <td>string</td>
+      <td>да</code></td>
+      <td></td>
+      <td>Адрес по которому можно скачать файл разговора</td>
+   </tr>
+</table>
+
+<h3 id="_2">Параметры ответа</h3>
+<table>
+   <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Обязательный</th>
+      <th>Описание</th>
+   </tr>
+</table>
+
+<h3 id="_3">Параметры уведомления о статусе обработки</h3>
+<table>
+   <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th>Обязательный</th>
+      <th>Допустимые значения</th>
+      <th>Описание</th>
+   </tr>
+   <tr>
+      <td><code>status</code></td>
+      <td>enum</td>
+      <td>да</td>
+      <td>
+      <li>processed - обработано</li>
+      <li>in_process - в процессе обработки</li>
+      <li>error - ошибка обработки</li>
+      </td>
+      <td>Статус обработки загруженного звонка</td>
+   </tr>
+   <tr>
+      <td><code>ext_id</code></td>
+      <td>string</td>
+      <td>да</td>
+      <td></td>
+      <td>Уникальный идентификатор звонка в вашей системе</td>
+   </tr>
+   <tr>
+      <td><code>call_session_id</code></td>
+      <td>number</td>
+      <td>нет</td>
+      <td></td>
+      <td>Уникальный идентификатор сессии звонка в CoMagic (см. метод <code>get.calls_report</code>)</td>
+   </tr>
+   <tr>
+      <td><code>timestamp</code></td>
+      <td>number</td>
+      <td>да</td>
+      <td></td>
+      <td>Время создания события в UTC GMT+00:00</td>
+   </tr>
+   <tr>
+      <td><code>error_message</code></td>
+      <td>string</td>
+      <td>нет</td>
+      <td></td>
+      <td>Сообщение об ошибке. Заполняется, если параметр status имеет значение "error"</td>
+   </tr>
+   <tr>
+      <td><code>error_code</code></td>
+      <td>enum</td>
+      <td>нет</td>
+      <td></td>
+      <td>Мнемоника ошибки. Заполняется, если параметр status имеет значение "error"</td>
+   </tr>
+</table>
+
+<h3 id="wav-">Требования к wav-файлам для речевой аналитики</h3>
+<li>Запись звонка в стерео-режиме с двумя аудио-каналами: речь сотрудника в одном канале, речь клиента в другом канале.
+<li>ИКМ-16 бит
+<li>Частоты дискретизации: 8000 Гц
+<li>Частотный диапазон не хуже 330-3400 Гц;
+<li>Отношение сигнал/шум в частотном диапазоне 330-3400 Гц: не менее 15 дБ;
+<li>Минимальная продолжительность речевого сигнала 16 сек;
+<li>Размер файла не больше 50Mb</li>
+
+### Требования к сервису, который будет отдавать записи разговоров, при их загрузке по переданному URL
+- В ответе на запрос для загрузки wav файлов должен быть заголовок Content-Type: audio/wav
+- В ответ на запрос для загрузки mp3 файлов должен быть заголовок Content-Type: audio/mpeg
+
+### JSON структура запроса
+
+
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;method&quot;: &quot;upload.calls&quot;,
+  &quot;params&quot;: {
+    &quot;access_token&quot;: &quot;string&quot;,
+    &quot;user_id&quot;: &quot;number&quot;,
+    &quot;calls&quot;: [
+      {
+        &quot;callback&quot;: {
+          &quot;url&quot;: &quot;string&quot;,
+          &quot;events&quot;: [
+
+          ]
+        },
+        &quot;ext_id&quot;: &quot;string&quot;,
+        &quot;direction&quot;: &quot;enum&quot;,
+        &quot;calling_phone_number&quot;: &quot;string&quot;,
+        &quot;called_phone_number&quot;: &quot;string&quot;,
+        &quot;start_time&quot;: &quot;iso8601&quot;,
+        &quot;finish_time&quot;: &quot;iso8601&quot;,
+        &quot;is_lost&quot;: &quot;boolean&quot;,
+        &quot;is_transfer&quot;: &quot;boolean&quot;,
+        &quot;visitor_session_id&quot;: &quot;number&quot;,
+        &quot;site_id&quot;: &quot;number&quot;,
+        &quot;campaign_id&quot;: &quot;number&quot;,
+        &quot;source_id&quot;: &quot;number&quot;,
+        &quot;wait_duration&quot;: &quot;number&quot;,
+        &quot;talk_duration&quot;: &quot;number&quot;,
+        &quot;comment&quot;: &quot;string&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;tag_id&quot;: &quot;number&quot;,
+            &quot;tag_name&quot;: &quot;string&quot;
+          }
+        ],
+        &quot;wav_records&quot;: [
+          {
+            &quot;employee_channel&quot;: &quot;enum&quot;,
+            &quot;employee_name&quot;: &quot;string&quot;,
+            &quot;employee_id&quot;: &quot;number&quot;,
+            &quot;record_url&quot;: &quot;string&quot;
+          }
+        ],
+        &quot;mp3_records&quot;: [
+          {
+            &quot;employee_name&quot;: &quot;string&quot;,
+            &quot;employee_id&quot;: &quot;number&quot;,
+            &quot;record_url&quot;: &quot;string&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+
+
+### JSON структура ответа
+<blockquote>Ответ приходит как только система сохранила звонки для дальнейшей обработки. По окончанию обработки звонка придет web-hook со со статусом обработки.</blockquote>
+
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;result&quot;: {
+  &quot;data&quot;: {
+      &quot;success&quot;: &quot;true&quot;
+    }
+  }
+}
+</code></pre>
+
+
+### JSON структура о статусе обработки
+
+<pre><code class="language-json">{
+  &quot;ext_id&quot;: &quot;string&quot;,
+  &quot;call_session_id&quot;: &quot;number&quot;,
+  &quot;status&quot;: &quot;enum&quot;,
+  &quot;timestamp&quot;: &quot;number&quot;,
+  &quot;error_message&quot;: &quot;string&quot;,
+  &quot;error_code&quot;: &quot;enum&quot;
+}
+</code></pre>
+
+
+
+### Пример для речевой аналитики, загрузка звонка абонента с несколькими сотрудниками одним wav-файлом
+Клиент загружает звонок в котором был трансфер и разговор абонент с несколькими сотрудниками.
+
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;method&quot;: &quot;upload.calls&quot;,
+  &quot;params&quot;: {
+    &quot;access_token&quot;: &quot;string&quot;,
+    &quot;calls&quot;: [
+      {
+        &quot;ext_id&quot;: &quot;test1&quot;,
+        &quot;direction&quot;: &quot;in&quot;,
+        &quot;calling_phone_number&quot;: &quot;89262444397&quot;,
+        &quot;called_phone_number&quot;: &quot;84955140576&quot;,
+        &quot;start_time&quot;: &quot;2019-07-01 12:00:00&quot;,
+        &quot;finish_time&quot;: &quot;2019-07-01 12:00:30&quot;,
+        &quot;is_lost&quot;: false,
+        &quot;is_transfer&quot;: true,
+        &quot;wait_duration&quot;: 10,
+        &quot;talk_duration&quot;: 20,
+        &quot;tags&quot;: [
+          {
+            &quot;tag_name&quot;: &quot;Целевой&quot;
+          },
+          {
+            &quot;tag_name&quot;: &quot;Тест&quot;
+          }
+        ],
+        &quot;wav_records&quot;: [
+          {
+            &quot;employee_channel&quot;: &quot;left&quot;,
+            &quot;employee_name&quot;: &quot;Иван Васильевич&quot;,
+            &quot;record_url&quot;: &quot;https://test.ru/shhgad-adjjsdf-ytrh&quot;
+          },
+          {
+            &quot;employee_channel&quot;: &quot;right&quot;,
+            &quot;employee_name&quot;: &quot;Александр Васильевич&quot;,
+            &quot;record_url&quot;: &quot;https://test.ru/shhgad-adjjsdf&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+
+
+### Пример для речевой аналитики, загрузка звонка абонента с сотрудником одним wav-файлом
+Клиент загружает звонок, в котором разговаривал абонент с одним сотрудником.
+
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;method&quot;: &quot;upload.calls&quot;,
+  &quot;params&quot;: {
+    &quot;access_token&quot;: &quot;string&quot;,
+    &quot;calls&quot;: [
+      {
+        &quot;ext_id&quot;: &quot;test1&quot;,
+        &quot;direction&quot;: &quot;in&quot;,
+        &quot;calling_phone_number&quot;: &quot;89262444397&quot;,
+        &quot;called_phone_number&quot;: &quot;84955140576&quot;,
+        &quot;start_time&quot;: &quot;2019-07-01 12:00:00&quot;,
+        &quot;finish_time&quot;: &quot;2019-07-01 12:00:30&quot;,
+        &quot;is_lost&quot;: false,
+        &quot;wait_duration&quot;: 10,
+        &quot;talk_duration&quot;: 20,
+        &quot;tags&quot;: [
+          {
+            &quot;tag_name&quot;: &quot;Целевой&quot;
+          },
+          {
+            &quot;tag_name&quot;: &quot;Тест&quot;
+          }
+        ],
+        &quot;wav_records&quot;: [
+          {
+            &quot;employee_channel&quot;: &quot;left&quot;,
+            &quot;employee_name&quot;: &quot;Иван Васильевич&quot;,
+            &quot;record_url&quot;: &quot;https://test.ru/shhgad-adjjsdf-xxxx&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+
+
+### Пример для сквозной аналитики, загрузка звонков от стороннего коллтрекинга
+
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;method&quot;: &quot;upload.calls&quot;,
+  &quot;params&quot;: {
+    &quot;access_token&quot;: &quot;string&quot;,
+    &quot;calls&quot;: [
+      {
+        &quot;ext_id&quot;: &quot;test1&quot;,
+        &quot;direction&quot;: &quot;in&quot;,
+        &quot;calling_phone_number&quot;: &quot;89262444397&quot;,
+        &quot;called_phone_number&quot;: &quot;84955140576&quot;,
+        &quot;start_time&quot;: &quot;2019-07-01 12:00:00&quot;,
+        &quot;finish_time&quot;: &quot;2019-07-01 12:00:30&quot;,
+        &quot;is_lost&quot;: false,
+        &quot;campaign_id&quot;: 435,
+        &quot;source_id&quot;: -1,
+        &quot;site_id&quot;: 24,
+        &quot;tags&quot;: [
+          {
+            &quot;tag_name&quot;: &quot;Целевой&quot;
+          },
+          {
+            &quot;tag_name&quot;: &quot;Тест&quot;
+          }
+        ],
+        &quot;mp3_records&quot;: [
+          {
+            &quot;record_url&quot;: &quot;https://test.ru/shhgad-adjjsdf-xxxx&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+
+
+### Пример для сквозной аналитики, загрузка звонков от формы обратного звонка
+
+<pre><code class="language-json">{
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;id&quot;: &quot;number&quot;,
+  &quot;method&quot;: &quot;upload.calls&quot;,
+  &quot;params&quot;: {
+    &quot;access_token&quot;: &quot;string&quot;,
+    &quot;calls&quot;: [
+      {
+        &quot;ext_id&quot;: &quot;test1&quot;,
+        &quot;direction&quot;: &quot;in&quot;,
+        &quot;calling_phone_number&quot;: &quot;89262444397&quot;,
+        &quot;called_phone_number&quot;: &quot;84955140576&quot;,
+        &quot;start_time&quot;: &quot;2019-07-01 12:00:00&quot;,
+        &quot;finish_time&quot;: &quot;2019-07-01 12:00:30&quot;,
+        &quot;is_lost&quot;: false,
+        &quot;visitor_session_id&quot;: 435,
+        &quot;tags&quot;: [
+          {
+            &quot;tag_name&quot;: &quot;Целевой&quot;
+          },
+          {
+            &quot;tag_name&quot;: &quot;Тест&quot;
+          }
+        ],
+        &quot;mp3_records&quot;: [
+          {
+            &quot;record_url&quot;: &quot;https://test.ru/shhgad-adjjsdf-xxxx&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+
+
+### Пример уведомления о статусе обработки звонка
+
+<pre><code class="language-json">{
+  &quot;ext_id&quot;: &quot;test1&quot;,
+  &quot;call_session_id&quot;: &quot;1564545&quot;,
+  &quot;status&quot;: &quot;processed&quot;,
+  &quot;timestamp&quot;: &quot;1562156217&quot;
+}
+</code></pre>
+
+
+### Список возвращаемых ошибок
+
+| Параметр        | Значение |
+| :------------ | :------------- |
+| max_file_size_download_error | Превышен максимальный размер файла. На текущий момент - 50 Мб. |
+| decode_error |Не смогли открыть файл разговора, отсутствуют первые байты в файлах mp3 - ID3 и wav - RIFF или при процессе декодирования возникла ошибка. |
+| wav_min_duration_processing_error | Скаченный wav-файл короче 16 секунд. |
+| wav_channels_processing_error | Скаченный wav-файл не содержит  2 канала.|
+| wav_processing_error | Ошибка при обработке wav-файла при кодирования файла к нужным параметрам.|
+| connection_download_error | Ошибка при подключении к серверу. Проблема с сетью.|
+| http_status_download_error | Сервер с которого скачиваем файл ответил не 200.|
+| http_content_type_download_error | Content-Type не соответствует спецификации.|
+| timeout_download_error | Очень долго скачивался файл или очень долго происходило соединение с сервером. Максимальное время  - 30 секунд|
+
+Смотрим раздел ["Список ошибок для методов с глаголом create"](../index.md#_changeErrors)
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+      
+        <script src="../../js/init.js"></script>
+      
+    
+  </body>
+</html>
